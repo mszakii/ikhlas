@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('partials/head') %>
+    <!-- css -->
+    <link rel="stylesheet" href="css/register.css" />
+    <!-- title and description -->
+    <title>Register</title>
+  </head>
+  <body>
+    <div class="parent">
+      <form action="/register/user" method="post">
+        <div class="caption">
+          <div class="title">Registration form</div>
+        </div>
+        <div class="group">
+          <input
+            type="text"
+            name="first_name"
+            id="firstName"
+            placeholder="First name"
+            minlength="3"
+            required
+          />
+          <input
+            type="text"
+            name="full_name"
+            id="name"
+            placeholder="Full name"
+            minlength="10"
+            required
+          />
+        </div>
+        <input
+          type="email"
+          name="mail"
+          id="mail"
+          placeholder="Email address"
+          required
+        />
+        <input
+          type="number"
+          name="phone"
+          id="phone"
+          minlength="6"
+          placeholder="Phone (+1408XXXXXXX)"
+          required
+        />
+        <div class="group-2">
+          <input
+            type="text"
+            name="country"
+            id="country"
+            placeholder="Country"
+            required
+          />
+          <input
+            type="number"
+            name="age"
+            id="age"
+            min="6"
+            max="80"
+            placeholder="Age"
+            required
+          />
+          <select name="gender" id="gender" required>
+            <option value="male">male</option>
+            <option value="female">female</option>
+          </select>
+        </div>
+        <textarea
+          name="msg"
+          id="msg"
+          rows="2"
+          placeholder="Have you any inquries or hardness? (optional)"
+        ></textarea>
+        <div class="des">Our team will contact within 48 hours.</div>
+        <button type="submit" class="btn btn-green">register</button>
+      </form>
+    </div>
+  </body>
+</html>

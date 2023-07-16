@@ -135,7 +135,8 @@ button:focus {
 
 /* inputs */
 input,
-textarea {
+textarea,
+select {
   padding: 13px 15px;
   /* border: 2px solid rgb(214, 214, 214); */
   border: 1px solid #ced4da;
@@ -151,12 +152,13 @@ textarea {
 }
 
 input:focus,
-textarea:focus {
+textarea:focus,
+select:focus {
   outline: none;
   border: 3px solid #2074b0a4;
   margin: 0;
 }
-.titleDiv {
+/* .titleDiv {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -166,4 +168,4 @@ textarea:focus {
   position: relative;
   border-bottom: 2px dotted var(--primary);
   padding-bottom: 5px;
-}
+} */

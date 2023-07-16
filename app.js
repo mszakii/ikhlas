@@ -17,6 +17,10 @@ app.get("/", (req, res) => {
   res.render("index");
 });
 
+app.get("/register", (req, res) => {
+  res.render("register");
+});
+
 // post request
 const transporter = mailer.createTransport({
   service: "gmail",
@@ -32,6 +36,7 @@ app.post("/send", (req, res) => {
     mail: req.body.mail,
     phone: req.body.phone,
     msg: req.body.msg,
+    title: "new message form contact section",
   };
 
   if (data.phone.length == 0) {
@@ -48,6 +53,43 @@ app.post("/send", (req, res) => {
     res.render("msg", { msg: "Message was send successfully!" });
   });
 });
+
+app.post("/register/user", (req, res) => {
+  const data = {
+    first_name: req.body.first_name,
+    full_name: req.body.full_name,
+    mail: req.body.mail,
+    phone: req.body.phone,
+    country: req.body.country,
+    gender: req.body.gender,
+    age: req.body.age,
+    msg: req.body.msg,
+    title: "new student want to register",
+    caption: "His",
+    cap: "He",
+  };
+
+  if (req.body.gender == "female") {
+    data.caption = "Her";
+    data.cap = "She";
+  }
+
+  ejs.renderFile("./views/regmail.ejs", data, function (err, ejsout) {
+    transporter.sendMail({
+      from: process.env.MAIL,
+      to: "testok.3090@gmail.com",
+      subject: "New registration inquire",
+      html: ejsout,
+    });
+
+    res.send("Done");
+    // res.render("msg", {
+    //   msg: "Thank you, our team will mail you within 48 hours.",
+    // });
+  });
+});
+
+// Page not found
 
 app.use((req, res) => {
   res.status(404).render("msg", { msg: "404 Page Not Found!" });

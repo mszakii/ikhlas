@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('partials/head') %>
+    <style>
+      h1 {
+        background: #3f51b5;
+        color: white;
+        padding: 20px;
+        border-radius: 10px 10px 0 0;
+      }
+
+      .parent {
+        background: #f8f8f8;
+        border-radius: 10px;
+        font-family: "Montserrat", sans-serif;
+        color: black;
+        font-size: 20px;
+      }
+
+      p {
+        padding: 10px 20px;
+      }
+
+      .btn {
+        padding: 10px 20px;
+        background: #009688;
+        color: white !important;
+        text-decoration: none;
+        border-radius: 5px;
+        width: fit-content;
+      }
+
+      .e {
+        font-weight: bold;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 60%;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      td,
+      th {
+        border: 2px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+      <h1>Hi Al-ikhlas team! 👋</h1>
+      <p>
+        We hope this email finds you well. We wanted to tell you that there is a
+        <%= title %>
+      </p>
+
+      <p>
+        <%= caption %> first name is <%= first_name %>, full name: <%= full_name
+        %>, Email <%= mail %>, phone <%= phone %>, <%= cap %> is from <%=
+        country %>, and <%= caption %> age is <%= age %>
+      </p>
+
+      <table>
+        <tr>
+          <th>Data</th>
+          <th>Value</th>
+        </tr>
+        <tr>
+          <td>First name</td>
+          <td><%= first_name %></td>
+        </tr>
+        <tr>
+          <td>Full name</td>
+          <td><%= full_name %></td>
+        </tr>
+        <tr>
+          <td>Email</td>
+          <td><%= mail %></td>
+        </tr>
+        <tr>
+          <td>Phone</td>
+          <td>
+            <a href="https://wa.me/<%= phone %>"><%= phone %></a>
+          </td>
+        </tr>
+        <tr>
+          <td>Country</td>
+          <td><%= country %></td>
+        </tr>
+        <tr>
+          <td>Age</td>
+          <td><%= age %></td>
+        </tr>
+      </table>
+
+      <p><%= msg %></p>
+
+      <p>Please contact with this student as soon as possible!</p>
+    </div>
+  </body>
+</html>
