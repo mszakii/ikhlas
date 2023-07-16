@@ -17,29 +17,14 @@ submit.onclick = function () {
 
 // https://rive.app/community/4501-9160-mail-send/
 
-
-// loader js
-
-// const divs = document.querySelectorAll('.item');
-// divs.forEach(div => {
-//   const iframe = div.querySelector("iframe");
-//   const loader = div.querySelector('.loaderdiv');
-//   iframe.addEventListener('load', () => {
-//     loader.style="display :none";
-
-
-//   });
-// });
-
 // price
 btn30 = document.getElementById("btn30");
 btn60 = document.getElementById("btn60");
 
-
 duv30 = document.getElementById("div30");
 div60 = document.getElementById("div60");
 
-btn30.addEventListener('click', () => {
+btn30.addEventListener("click", () => {
   div60.style = "display :none";
   btn60.classList.remove("btn-blue");
   btn60.classList.add("btn-rounded");
@@ -48,7 +33,7 @@ btn30.addEventListener('click', () => {
   btn30.classList.remove("btn-rounded");
 });
 
-btn60.addEventListener('click', () => {
+btn60.addEventListener("click", () => {
   div30.style = "display :none";
 
   btn30.classList.remove("btn-blue");
@@ -61,23 +46,33 @@ btn60.addEventListener('click', () => {
 });
 
 // Get the button element
-const scrollBtn = document.querySelector('#scroll-btn');
+const scrollBtn = document.querySelector("#scroll-btn");
 
 // Show the button if the user has scrolled down more than 20% of the page height
-document.addEventListener('scroll', () => {
+document.addEventListener("scroll", () => {
   const scrollHeight = window.scrollY;
   const pageHeight = document.body.scrollHeight - window.innerHeight;
   if (scrollHeight > pageHeight * 0.2) {
-    scrollBtn.style.display = 'block';
+    scrollBtn.style.display = "block";
   } else {
-    scrollBtn.style.display = 'none';
+    scrollBtn.style.display = "none";
   }
 });
 
 // Scroll the page to the top when the button is clicked
-scrollBtn.addEventListener('click', () => {
+scrollBtn.addEventListener("click", () => {
   window.scrollTo({
     top: 0,
-    behavior: 'smooth'
+    behavior: "smooth",
   });
 });
+
+const yearElement = document.getElementById("yearCopyright");
+
+let date = new Date();
+
+yearElement.innerHTML = date.getFullYear();
+
+console.log(
+  "Console is for developers only! Do not write anything there that you do not understant to prevent being attacked by Hackers!"
+);

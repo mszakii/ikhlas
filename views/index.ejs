@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/master.css" />
     <!-- title and description -->
     <title>Al-Ikhlas</title>
+    <link rel="shortcut icon" href="assets/quran.png?v=2" type="image/x-icon" />
     <!-- fonts -->
     <script src="https://use.fontawesome.com/2662914969.js"></script>
     <!-- Open Graph -->
@@ -23,10 +24,11 @@
         <nav>
           <div class="logo">Al-Ikhlas</div>
           <div class="links">
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Courses</a>
-            <a href="#">Contact us</a>
+            <a href="/">Home</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <a href="#pricing">Pricing</a>
+            <a href="/register">Register</a>
           </div>
           <div class="login" onclick="location.href='pages/user.html'">
             My account | <i class="fa fa-user-circle" aria-hidden="true"></i>
@@ -46,8 +48,12 @@
               the world.
             </div>
             <div class="group">
-              <div class="btn btn-green">Courses</div>
-              <div class="btn btn-rounded">Register</div>
+              <div class="btn btn-green" onclick="location.href='#courses'">
+                Courses
+              </div>
+              <div class="btn btn-rounded" onclick="location.href='/register'">
+                Register
+              </div>
             </div>
           </div>
           <div class="right">
@@ -85,9 +91,9 @@
 
     <section class="courses">
       <div class="parent">
-        <div class="titleDiv">
-          <div class="title">Our Courses</div>
-          <p>Free Courses on Youtube</p>
+        <div class="title">
+          <div class="caption">Courses</div>
+          <div class="des">Our sample courses</div>
         </div>
 
         <div class="bigdiv">
@@ -96,49 +102,29 @@
               <img
                 src="https://i.ytimg.com/vi_webp/CjUtQb4n6ds/maxresdefault.webp"
               />
-              <!-- <div class="loaderdiv">
-              <span class="loader"></span>
-            </div>
-          -->
             </div>
             <div class="item">
               <img
                 src="https://i.ytimg.com/vi_webp/CjUtQb4n6ds/maxresdefault.webp"
               />
-
-              <!-- <div class="loaderdiv">
-              <span class="loader"></span>
             </div>
-            --></div>
           </div>
           <div>
             <div class="item">
               <img
                 src="https://i.ytimg.com/vi_webp/CjUtQb4n6ds/maxresdefault.webp"
               />
-
-              <!-- <div class="loaderdiv">
-              <span class="loader"></span>
             </div>
-            --></div>
             <div class="item">
               <img
                 src="https://i.ytimg.com/vi_webp/CjUtQb4n6ds/maxresdefault.webp"
               />
-
-              <!-- <div class="loaderdiv">
-              <span class="loader"></span>
             </div>
-            --></div>
             <div class="item">
               <img
                 src="https://i.ytimg.com/vi_webp/CjUtQb4n6ds/maxresdefault.webp"
               />
-
-              <!-- <div class="loaderdiv">
-              <span class="loader"></span>
             </div>
-            --></div>
           </div>
         </div>
       </div>
@@ -146,13 +132,13 @@
     <!-- =====courses===== -->
 
     <!-- price -->
-    <section class="price">
+    <section class="price" id="pricing">
       <div class="parent">
-        <div class="titleDiv">
-          <div class="title">Package Pricing</div>
-          <p>
+        <div class="title">
+          <div class="caption">Package Pricing</div>
+          <div class="des">
             First class is free. No payment required for the first free class.
-          </p>
+          </div>
         </div>
 
         <div class="group">
@@ -401,7 +387,9 @@
         </div>
       </div>
     </footer>
-    <footer class="part2">All CopyWrite &copy; save at Al-Ikhlas.</footer>
+    <footer class="part2">
+      Copyright &copy; <span id="yearCopyright"></span>
+    </footer>
     <!-- =====Footer===== -->
 
     <!-- script -->
