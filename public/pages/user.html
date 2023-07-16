@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- css -->
+    <link rel="stylesheet" href="../css/framework.css" />
+    <link rel="stylesheet" href="../css/user.css" />
+    <!-- title and description -->
+    <title>Al-Ikhlas</title>
+    <!-- fonts -->
+    <script src="https://use.fontawesome.com/2662914969.js"></script>
+    <!-- Open Graph -->
+    <!-- Rive -->
+    <script src="https://unpkg.com/@rive-app/canvas@1.0.102"></script>
+  </head>
+  <body>
+    <header>
+      <section class="left">
+        <canvas id="canvas" width="1200" height="1200"></canvas>
+      </section>
+      <section class="right">
+        <div class="social"></div>
+        <div class="form">
+          <!-- in back-end convert div to form but did not change the class -->
+          <input
+            type="mail"
+            name="mail"
+            id="mail"
+            placeholder="Email"
+            required
+          />
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Password"
+            required
+          />
+          <div class="group">
+            <div class="btn btn-blue" id="submit">Login</div>
+            <div class="btn btn-green" id="submit">Sign Up</div>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <!-- script -->
+    <script src="../js/user.js"></script>
+  </body>
+</html>

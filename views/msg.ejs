@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- css -->
+    <link rel="stylesheet" href="../css/framework.css" />
+    <!-- title and description -->
+    <title>Al-Ikhlas</title>
+    <!-- fonts -->
+    <script src="https://use.fontawesome.com/2662914969.js"></script>
+    <!-- Open Graph -->
+    <!-- Rive -->
+    <script src="https://unpkg.com/@rive-app/canvas@1.0.102"></script>
+
+    <style>
+      .center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+        height: 100vh;
+        font-size: 2rem;
+      }
+
+      a {
+        font-size: 1rem;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="center">
+      <div><%= msg %></div>
+      <div>You will be redirected in <span id="time"></span></div>
+      <div><a href="/" class="btn btn-blue">Home page</a></div>
+    </div>
+
+    <script>
+      let timer = 3;
+
+      function redirect() {
+        time.innerHTML = timer;
+
+        setInterval(() => {
+          timer -= 1;
+
+          time.innerHTML = timer;
+        }, 1000);
+
+        setTimeout(function () {
+          location.href = "/";
+        }, timer * 1000);
+      }
+
+      window.onload = redirect();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+header {
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+}
+
+section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  width: 450px;
+  padding: var(--padding);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.right {
+  background: var(--Landingbg);
+}
+
+canvas {
+  height: 100%;
+}
+
+@media (max-width: 1200px) {
+  .left {
+    display: none;
+  }
+}
+
+.group {
+  display: flex;
+  gap: 20px;
+}

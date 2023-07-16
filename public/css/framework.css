@@ -1,0 +1,169 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--blue);
+  border-radius: 50px;
+}
+::-webkit-scrollbar-thumb:active {
+  background-color: var(--blue2);
+}
+::selection {
+  background-color: var(--primary);
+  color: white;
+}
+
+:root {
+  --bg: #ffffff;
+  --Landingbg: #f5f9fc;
+  --section: #172542;
+
+  /* --primary: #25a26b;
+  --secoundry: #37af58; */
+
+  --primary: #2073b0;
+  --secoundry: #16405f;
+
+  --plant-dark: #1a704b;
+  --danger: #f0534f;
+  --blue: #2073b0;
+  --blue2: #16405f;
+  --warning: #f0b11f;
+  --padding: 20px;
+  --transition: 0.25s;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 20px;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  overflow-x: hidden;
+}
+
+/* container */
+.parent {
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .parent {
+    width: 750px;
+  }
+}
+
+@media (min-width: 992px) {
+  .parent {
+    width: 970px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .parent {
+    width: 1170px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .parent {
+    width: 1370px;
+  }
+}
+
+/* Group of btn  */
+.group {
+  display: flex;
+}
+
+.group .btn {
+  margin-right: 20px;
+}
+
+/* btns */
+button {
+  border: 0;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+button:focus {
+  outline: none;
+}
+
+.btn {
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.btn-green {
+  background: linear-gradient(
+    to right bottom,
+    var(--primary),
+    var(--secoundry)
+  );
+  color: white;
+}
+
+.btn-blue {
+  background: linear-gradient(to right bottom, var(--blue), var(--blue2));
+  color: white;
+  border: none;
+}
+
+.btn-rounded {
+  border: 2px solid #000;
+  color: #000;
+}
+
+/* inputs */
+input,
+textarea {
+  padding: 13px 15px;
+  /* border: 2px solid rgb(214, 214, 214); */
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  transition: var(--transition) border-color;
+  margin: 2px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+textarea {
+  resize: none;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border: 3px solid #2074b0a4;
+  margin: 0;
+}
+.titleDiv {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.title {
+  margin-bottom: 50px;
+  position: relative;
+  border-bottom: 2px dotted var(--primary);
+  padding-bottom: 5px;
+}
