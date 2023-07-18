@@ -82,10 +82,9 @@ app.post("/register/user", (req, res) => {
       html: ejsout,
     });
 
-    res.send("Done");
-    // res.render("msg", {
-    //   msg: "Thank you, our team will mail you within 48 hours.",
-    // });
+    res.render("msg", {
+      msg: "Thank you, our team will mail you within 48 hours.",
+    });
   });
 });
 

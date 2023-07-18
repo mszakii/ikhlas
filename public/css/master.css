@@ -37,6 +37,12 @@ header nav a:hover {
   color: var(--primary);
 }
 
+header nav .login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 header nav .login:hover {
   color: var(--primary);
   cursor: pointer;

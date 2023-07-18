@@ -21,7 +21,7 @@ submit.onclick = function () {
 btn30 = document.getElementById("btn30");
 btn60 = document.getElementById("btn60");
 
-duv30 = document.getElementById("div30");
+div30 = document.getElementById("div30");
 div60 = document.getElementById("div60");
 
 btn30.addEventListener("click", () => {
@@ -65,6 +65,16 @@ scrollBtn.addEventListener("click", () => {
     top: 0,
     behavior: "smooth",
   });
+});
+
+// choose btn in pricing section
+let cardsArr = Array.from(div30.children);
+cardsArr.push(...Array.from(div60.children));
+
+cardsArr.forEach((element) => {
+  element.onclick = function () {
+    location.href = "/done";
+  };
 });
 
 const yearElement = document.getElementById("yearCopyright");
