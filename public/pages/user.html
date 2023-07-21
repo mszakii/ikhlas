@@ -18,8 +18,7 @@
         <canvas id="canvas" width="1200" height="1200"></canvas>
       </section>
       <section class="right">
-        <div class="social"></div>
-        <div class="form">
+        <form class="form">
           <!-- in back-end convert div to form but did not change the class -->
           <input
             type="mail"
@@ -35,11 +34,12 @@
             placeholder="Password"
             required
           />
+          <button class="btn btn-blue" type="submit">Login</button>
           <div class="group">
-            <div class="btn btn-blue" id="submit">Login</div>
-            <div class="btn btn-green" id="submit">Sign Up</div>
+            <div>Do not have an account?</div>
+            <a href="/register">Register</a>
           </div>
-        </div>
+        </form>
       </section>
     </header>
 

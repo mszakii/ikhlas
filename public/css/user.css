@@ -17,6 +17,8 @@ section {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px #eee;
 }
 
 .right {
@@ -35,5 +37,17 @@ canvas {
 
 .group {
   display: flex;
-  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+button.btn {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--primary);
 }
