@@ -113,7 +113,8 @@ button:focus {
   width: fit-content;
 }
 
-.btn-green {
+.btn-green,
+.btn-blue {
   background: linear-gradient(
     to right bottom,
     var(--plant-dark),
@@ -122,11 +123,11 @@ button:focus {
   color: white;
 }
 
-.btn-blue {
+/* .btn-blue {
   background: linear-gradient(to right bottom, var(--blue), var(--blue2));
   color: white;
   border: none;
-}
+} */
 
 .btn-rounded {
   border: 2px solid #000;
