@@ -51,6 +51,12 @@ html {
   font-size: 20px;
 }
 
+@media (max-width: 600px) {
+  html {
+    font-size: 18px;
+  }
+}
+
 body {
   font-family: "Montserrat", sans-serif;
   overflow-x: hidden;
