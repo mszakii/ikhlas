@@ -116,8 +116,8 @@ button:focus {
 .btn-green {
   background: linear-gradient(
     to right bottom,
-    var(--primary),
-    var(--secoundry)
+    var(--plant-dark),
+    hsl(154, 62%, 22%)
   );
   color: white;
 }

@@ -152,6 +152,13 @@ section {
   min-height: 100vh;
 }
 
+@media (max-width: 992px) {
+  section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
+
 section .content .parent {
   padding: var(--padding);
 }
@@ -291,6 +298,61 @@ section .title .des {
 }
 
 /* End courses */
+
+/* plans */
+section.plans {
+  background: url("/assets/clouds.svg");
+}
+
+.plans .parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.plans .plan-card {
+  padding: 20px;
+  border-radius: 20px;
+  background: var(--Landingbg);
+  margin: 20px;
+  max-width: 400px;
+  min-height: 550px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.plans .plan-card h2 {
+  margin: 20px 0;
+}
+
+.plans .plan-card ul {
+  list-style: circle;
+  margin-left: 20px;
+}
+
+.plans .plan-card .price {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+}
+
+.plans .plan-card .price .one .st {
+  font-size: 0.75rem;
+}
+
+.plans .plan-card .price .one .pay {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.plans .plan-card .price .one .pay span {
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+/* plans */
+
 /* price */
 .price {
   background-color: var(--Landingbg);
