@@ -234,16 +234,18 @@ section .title .des {
 /* courses */
 .courses {
   color: #fff;
-  background: var(--section);
+  /* background: var(--section); */
 }
 
 .courses .parent {
+  background: url("/assets/clouds.svg");
   min-height: 100vh;
   padding: 20px 30px;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   flex-direction: column;
+  color: inherit;
 }
 
 .courses .bigdiv {
@@ -452,8 +454,7 @@ section .title .des {
 
 /* footer */
 footer {
-  background: var(--section);
-  color: #fff;
+  background: var(--Landingbg);
   text-align: left;
   padding: 30px;
 }
@@ -493,7 +494,7 @@ footer .child1 p {
 .child2 > div a {
   display: flex;
   align-items: center;
-  color: #fff;
+  color: #000;
   text-decoration: none;
   margin: 20px 0px;
 }
@@ -509,7 +510,8 @@ footer .child1 p {
 }
 
 footer.part2 {
-  border-top: 1px dotted #fff;
-  filter: brightness(0.6);
+  /* border-top: 1px dotted #fff; */
+  /* filter: brightness(0.6); */
+  background: white;
   text-align: center;
 }
