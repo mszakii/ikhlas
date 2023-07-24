@@ -320,7 +320,7 @@ section.plans {
   box-shadow: 0 0 5px #ddd;
   margin: 20px;
   max-width: 400px;
-  min-height: 550px;
+  min-height: 450px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -337,7 +337,9 @@ section.plans {
 
 .plans .plan-card .price {
   display: grid;
-  grid-template-columns: 3fr 2fr;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  margin-top: 20px;
 }
 
 .plans .plan-card .price .one .st {

@@ -18,7 +18,7 @@ submit.onclick = function () {
 // https://rive.app/community/4501-9160-mail-send/
 
 // price
-btn30 = document.getElementById("btn30");
+/*btn30 = document.getElementById("btn30");
 btn60 = document.getElementById("btn60");
 
 div30 = document.getElementById("div30");
@@ -45,6 +45,18 @@ btn60.addEventListener("click", () => {
   btn60.classList.remove("btn-rounded");
 });
 
+// choose btn in pricing section
+let cardsArr = Array.from(div30.children);
+cardsArr.push(...Array.from(div60.children));
+
+cardsArr.forEach((element) => {
+  element.onclick = function () {
+    location.href = "/done";
+  };
+});*/
+
+// price end
+
 // Get the button element
 const scrollBtn = document.querySelector("#scroll-btn");
 
@@ -65,16 +77,6 @@ scrollBtn.addEventListener("click", () => {
     top: 0,
     behavior: "smooth",
   });
-});
-
-// choose btn in pricing section
-let cardsArr = Array.from(div30.children);
-cardsArr.push(...Array.from(div60.children));
-
-cardsArr.forEach((element) => {
-  element.onclick = function () {
-    location.href = "/done";
-  };
 });
 
 const yearElement = document.getElementById("yearCopyright");
