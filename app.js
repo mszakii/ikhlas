@@ -23,7 +23,27 @@ app.get("/register", (req, res) => {
 
 // pages
 app.get("/plans/private", (req, res) => {
-  res.render("plans/private");
+  res.render("plans/private", {
+    plan: "private",
+    title: "Online Quran Private Lessons for adults",
+    logo: "/assets/3.png",
+  });
+});
+
+app.get("/plans/circles", (req, res) => {
+  res.render("plans/private", {
+    plan: "circles",
+    title: "Online Quran Private Lessons for adults and kids",
+    logo: "/assets/2.png",
+  });
+});
+
+app.get("/plans/kids", (req, res) => {
+  res.render("plans/private", {
+    plan: "kids",
+    title: "Online Quran Lessons for kids",
+    logo: "/assets/1.png",
+  });
 });
 
 // post request

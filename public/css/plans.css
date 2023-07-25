@@ -5,6 +5,12 @@ nav {
   z-index: 1000;
 }
 
+nav .parent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 nav img {
   width: 150px;
 }
@@ -85,6 +91,7 @@ header .left {
 /* price */
 section.price {
   background: url("../assets/clouds.svg");
+  padding: 20px;
 }
 
 .price h1 {

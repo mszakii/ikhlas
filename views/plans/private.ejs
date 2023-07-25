@@ -3,7 +3,6 @@
   <head>
     <%- include('../partials/head') %>
     <!-- css -->
-    <link rel="stylesheet" href="../css/framework.css" />
     <link rel="stylesheet" href="../css/plans.css" />
     <!-- title and description -->
     <title>Al-Ikhlas</title>
@@ -12,7 +11,13 @@
     <nav>
       <div class="parent">
         <div class="logo">
-          <img src="../assets/3.png" alt="Al Ikhlas" />
+          <img src="<%= logo %>" alt="Al Ikhlas" />
+        </div>
+        <div
+          class="btn btn-green"
+          onclick="location.href='/plans/<%= plan %>/register'"
+        >
+          Register
         </div>
       </div>
     </nav>
@@ -21,15 +26,17 @@
       <div class="landing">
         <div class="parent">
           <div class="left">
-            <h1>Online Quran Private Lessons for adults</h1>
+            <h1><%= title %></h1>
             <div class="des">
               Learn Quran and tajweed with our expert tutors. 30+ mintes plans.
               fixed scheduled days
             </div>
-            <div class="btn btn-blue">See our plans</div>
+            <div class="btn btn-green" onclick="location.href='#pricing'">
+              See our plans
+            </div>
           </div>
           <div class="right">
-            <img class="quran" src="../assets/3.png" alt="quran" />
+            <img class="quran" src="<%= logo %>" alt="quran" />
           </div>
         </div>
       </div>
@@ -37,7 +44,7 @@
 
     <section class="price" id="pricing">
       <h1 class="titles">
-        Our private plan <br />
+        Our <%= plan %> plan <br />
         monthly package pricing
       </h1>
       <div class="parent">
