@@ -71,8 +71,8 @@ app.post("/send", (req, res) => {
   ejs.renderFile("./views/mail.ejs", data, function (err, ejsout) {
     transporter.sendMail({
       from: process.env.MAIL,
-      to: "testok.3090@gmail.com",
-      subject: "New registration inquire",
+      to: "alikhlasins@gmail.com",
+      subject: "Support request 👮‍♂️",
       html: ejsout,
     });
     res.render("msg", { msg: "Message was send successfully!" });

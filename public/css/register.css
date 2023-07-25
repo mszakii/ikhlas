@@ -49,6 +49,10 @@ form select:focus {
   margin: 10px 0;
 }
 
+select option:nth-child(even) {
+  background: #eee;
+}
+
 form .group {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -58,6 +62,12 @@ form .group {
 form .group-2 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+form .group-3 {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
   gap: 10px;
 }
 
