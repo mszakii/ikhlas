@@ -21,6 +21,11 @@ app.get("/register", (req, res) => {
   res.render("register");
 });
 
+// pages
+app.get("/plans/private", (req, res) => {
+  res.render("plans/private");
+});
+
 // post request
 const transporter = mailer.createTransport({
   service: "gmail",

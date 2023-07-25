@@ -1,0 +1,265 @@
+nav {
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 0 10px #ddd;
+  z-index: 1000;
+}
+
+nav img {
+  width: 150px;
+}
+
+header .landing {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 50px 0;
+}
+
+header .landing .parent {
+  /* padding: var(--padding); */
+  display: flex;
+  height: 100%;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  header > .parent {
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  header .landing .parent {
+    flex-direction: column-reverse;
+  }
+}
+
+header .left {
+  width: 50%;
+}
+
+header .left h1 {
+  font-size: 3rem;
+}
+
+@media (max-width: 768px) {
+  header .left {
+    width: 100%;
+    flex: 1;
+  }
+}
+
+header .right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  header .right {
+    flex: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  header .landing .quran {
+    width: 50vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+header .left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--padding);
+  gap: 20px;
+}
+
+/* price */
+section.price {
+  background: url("../assets/clouds.svg");
+}
+
+.price h1 {
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.price .parent {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 30px;
+}
+
+.parent .bigCard {
+  display: grid;
+  width: 90%;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  row-gap: 20px;
+  column-gap: 74px;
+}
+
+@media (max-width: 500px) {
+  .parent .bigCard {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+  }
+}
+
+.parent .group {
+  margin: 20px 0px;
+}
+
+.parent .card {
+  width: 200px;
+  height: 300px;
+  border-top: 4px solid var(--plant-dark);
+  border-radius: 5px;
+  box-shadow: 0px 0px 1px #000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.card h5 {
+  color: var(--plant-dark);
+  margin-top: 10px;
+}
+
+.card h3 {
+  width: 110%;
+  transform: translatex(-3%);
+  background-color: var(--plant-dark);
+  padding: 10px;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  box-shadow: 0px 0px 4px #000;
+}
+
+.card h3::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0px;
+  width: 7.5%;
+  height: 0;
+  padding-bottom: 7.5%;
+  background-image: linear-gradient(
+    225deg,
+    var(--plant-dark) 50%,
+    transparent 50%
+  );
+  filter: brightness(0.6);
+}
+
+.card span {
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+.card hr {
+  margin: 10px;
+}
+
+.card .priceDiv {
+  opacity: 0.9;
+  color: var(--plant-dark);
+}
+
+.card .priceDiv .s2 {
+  font-size: 13px;
+}
+
+.card .btn {
+  width: 100%;
+  text-align: center;
+  border: none;
+  border-top: 2px solid var(--plant-dark);
+  color: var(--plant-dark);
+  transition-duration: 0.3s;
+}
+
+.card .btn:hover {
+  color: #fff;
+  background-color: var(--plant-dark);
+}
+/* End price  */
+
+/* footer */
+footer {
+  text-align: left;
+  padding: 30px;
+}
+
+footer .parent {
+  display: flex;
+}
+
+.child2 {
+  flex-basis: 33.33%;
+}
+
+.child1 {
+  flex-basis: 66.66%;
+}
+
+.child1,
+.child2 {
+  display: flex;
+  flex-direction: column;
+}
+
+footer .child1 p {
+  padding-right: 20px;
+  opacity: 0.7;
+  margin: 20px 0px;
+}
+
+.child2 > div,
+.child1 > div {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  height: 100%;
+}
+
+.child2 > div a {
+  display: flex;
+  align-items: center;
+  color: #000;
+  text-decoration: none;
+  margin: 20px 0px;
+}
+
+.child2 > div a h6 {
+  margin-left: 20px;
+}
+
+@media (max-width: 450px) {
+  footer .parent {
+    flex-direction: column;
+  }
+}
+
+footer.part2 {
+  /* border-top: 1px dotted #fff; */
+  /* filter: brightness(0.6); */
+  background: white;
+  text-align: center;
+}
