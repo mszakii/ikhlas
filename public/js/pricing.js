@@ -49,4 +49,4 @@ console.log(
 );
 
 // doamin
-document.getElementById("domain").innerHTML = "IkhlasINS.com";
+document.getElementById("domain").innerHTML = "alikhlas-institute.com";
