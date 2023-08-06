@@ -740,21 +740,18 @@
         /> -->
         <select name="plan" id="plan">
           <optgroup label="30 mintes plans">
-            <option value="MAIN-30-2">30 mintes 2 days weekly</option>
-            <option value="MAIN-30-3">30 mintes 3 days weekly</option>
-            <option value="MAIN-30-4">30 mintes 4 days weekly</option>
-            <option value="MAIN-30-5">30 mintes 5 days weekly</option>
-            <option value="MAIN-30-6">30 mintes 6 days weekly</option>
+            <% plansOne.forEach(plan => { %>
+              <option value="<%= plan[1] %>"><%= plan[0] %></option>
+            <% }) %>
           </optgroup>
           <optgroup label="60 mintes plans">
-            <option value="MAIN-60-1">30 mintes 1 days weekly</option>
-            <option value="MAIN-60-2">30 mintes 2 days weekly</option>
-            <option value="MAIN-60-3">30 mintes 3 days weekly</option>
-            <option value="MAIN-60-4">30 mintes 4 days weekly</option>
-            <option value="MAIN-60-5">30 mintes 5 days weekly</option>
-            <option value="MAIN-60-5">30 mintes 6 days weekly</option>
+            <% plansTwo.forEach(plan => { %>
+              <option value="<%= plan[1] %>"><%= plan[0] %></option>
+            <% }) %>
           </optgroup>
         </select>
+        <input type="text" name="code" id="code" placeholder="Promotion code" value="FREE30" >
+        <div class="des" id="codeDes">Congrats 🎉 you will get a <span id="codesDes">30 minutes free lecture</span>!</div>
         <div class="des">Our team will contact within 48 hours.</div>
         <button type="submit" class="btn btn-green">register</button>
       </form>
@@ -762,7 +759,23 @@
 
     <!-- script -->
     <script>
-      reqForm.action = `${location.pathname}`
+      reqForm.action = `${location.pathname}`;
+
+      code.addEventListener("focusout", async () => {
+        let data = await fetch("/site/promotion/codes", {
+          method: "POST"
+        })
+        .then(data => data.json())
+        .then(data => { 
+          codeDes.innerHTML = `Soryy that code is invalid 😅 But you could still use FREE30 to get a 30 minutes free demo 😉`
+          data.forEach((dataCode) => {
+            if (code.value.toLowerCase() == dataCode[0].toLowerCase()) {
+              codeDes.innerHTML = `Congrats 🎉 you will get a ${dataCode[1]}!`
+            }
+          });
+        })
+      })
+
     </script>
   </body>
 </html>

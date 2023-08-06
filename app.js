@@ -18,7 +18,48 @@ app.get("/", (req, res) => {
 });
 
 app.get("/plans/:type/register", (req, res) => {
-  res.render("register");
+
+  if (req.params.type === "private") {
+    res.render("register", {
+      plansOne: [
+        ["2 days weekly", "MAIN-30-2"], 
+        ["3 days weekly", "MAIN-30-3"],
+        ["4 days weekly", "MAIN-30-4"],
+        ["5 days weekly", "MAIN-30-5"],
+        ["6 days weekly", "MAIN-30-6"],
+      ],
+      plansTwo: [
+        ["1 days weekly", "MAIN-60-1"], 
+        ["2 days weekly", "MAIN-60-2"], 
+        ["3 days weekly", "MAIN-60-3"],
+        ["4 days weekly", "MAIN-60-4"],
+        ["5 days weekly", "MAIN-60-5"],
+        ["6 days weekly", "MAIN-60-6"],
+      ]
+    });
+  } else if (req.params.type === "circles") {
+    res.render("register", 
+      {
+        plansOne: [
+          ["2 days weekly", "CRCL-30-2"], 
+          ["3 days weekly", "CRCL-30-3"],
+          ["4 days weekly", "CRCL-30-4"],
+          ["5 days weekly", "CRCL-30-5"],
+          ["6 days weekly", "CRCL-30-6"],
+        ],
+        plansTwo: [
+          ["1 days weekly", "CRCL-60-1"], 
+          ["2 days weekly", "CRCL-60-2"], 
+          ["3 days weekly", "CRCL-60-3"],
+          ["4 days weekly", "CRCL-60-4"],
+          ["5 days weekly", "CRCL-60-5"],
+          ["6 days weekly", "CRCL-60-6"],
+        ]
+      }
+    );
+  } else {
+    res.redirect("/error")
+  }
 });
 
 // pages
@@ -37,6 +78,14 @@ app.get("/plans/circles", (req, res) => {
     logo: "/assets/2.png",
   });
 });
+
+// Codes API
+app.post("/site/promotion/codes", (req, res) => {
+  res.send([
+    ["FREE30", "30 minutes free lecture"],
+    ["OFF25", "25% off for a month"],
+  ])
+})
 
 // post request
 const transporter = mailer.createTransport({

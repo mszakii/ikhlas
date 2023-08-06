@@ -71,8 +71,19 @@ form select:focus {
   margin: 10px 0;
 }
 
+select optgroup {
+  background: var(--plant-dark);
+  color: white;
+}
+
 select option:nth-child(even) {
   background: #eee;
+  color: black;
+}
+
+select option:nth-child(odd) {
+  background: #fff;
+  color: black;
 }
 
 form .group {
