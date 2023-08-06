@@ -94,8 +94,6 @@ app.post("/plans/:type/register", (req, res) => {
     data.cap = "She";
   }
 
-  res.send(data)
-
   ejs.renderFile("./views/regmail.ejs", data, function (err, ejsout) {
     transporter.sendMail({
       from: process.env.MAIL,
