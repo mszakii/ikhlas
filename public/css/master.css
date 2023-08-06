@@ -22,6 +22,22 @@ header {
   min-height: 100vh;
 }
 
+header .alert {
+  background: var(--blue);
+  padding: var(--padding);
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+header .alert .close {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
 header nav {
   display: flex;
   padding: var(--padding);
