@@ -4,14 +4,16 @@
     <%- include('partials/head') %>
     <style>
       h1 {
-        background: #3f51b5;
+        /*background: #3f51b5;*/
+        background: #1a704b;
         color: white;
         padding: 20px;
         border-radius: 10px 10px 0 0;
       }
 
       .parent {
-        background: #f8f8f8;
+        /*background: #f8f8f8;*/
+        background: #f5f9fc;
         border-radius: 10px;
         font-family: "Montserrat", sans-serif;
         color: black;
@@ -60,7 +62,7 @@
 
       <p>
         <%= caption %> first name is <%= first_name %>, full name: <%= full_name
-        %>, Email <%= mail %>, phone <%= phone %>, <%= cap %> is from <%=
+        %>, Email <%= mail %>, WhatsApp <%= whatsapp %>, <%= cap %> is from <%=
         country %>, and <%= caption %> age is <%= age %>
       </p>
 
@@ -84,7 +86,7 @@
         <tr>
           <td>Phone</td>
           <td>
-            <a href="https://wa.me/<%= phone %>"><%= phone %></a>
+            <a href="<%= whatsapp %>"><%= phone %></a>
           </td>
         </tr>
         <tr>
@@ -92,8 +94,20 @@
           <td><%= country %></td>
         </tr>
         <tr>
-          <td>Age</td>
+          <td>Gender</td>
+          <td><%= gender %></td>
+        </tr>
+        <tr>
+          <td>Birthday</td>
           <td><%= age %></td>
+        </tr>
+        <tr>
+          <td>Group</td>
+          <td><%= type %></td>
+        </tr>
+        <tr>
+          <td>Plan</td>
+          <td><%= plan %></td>
         </tr>
       </table>
 

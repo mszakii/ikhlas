@@ -32,7 +32,7 @@ cardsArr.push(...Array.from(div60.children));
 
 cardsArr.forEach((element) => {
   element.onclick = function () {
-    location.href = `${location.pathname}/register`;
+    location.href = `${location.pathname}/register?plan=${element.getAttribute("plan")}`;
   };
 });
 

@@ -17,7 +17,7 @@ app.get("/", (req, res) => {
   res.render("index");
 });
 
-app.get("/register", (req, res) => {
+app.get("/plans/:type/register", (req, res) => {
   res.render("register");
 });
 
@@ -35,14 +35,6 @@ app.get("/plans/circles", (req, res) => {
     plan: "circles",
     title: "Online Quran Private Lessons for adults and kids",
     logo: "/assets/2.png",
-  });
-});
-
-app.get("/plans/kids", (req, res) => {
-  res.render("plans/private", {
-    plan: "kids",
-    title: "Online Quran Lessons for kids",
-    logo: "/assets/1.png",
   });
 });
 
@@ -79,16 +71,19 @@ app.post("/send", (req, res) => {
   });
 });
 
-app.post("/register/user", (req, res) => {
+app.post("/plans/:type/register", (req, res) => {
   const data = {
     first_name: req.body.first_name,
     full_name: req.body.full_name,
     mail: req.body.mail,
-    phone: req.body.phone,
+    phone: `+${req.body.countryCode}${req.body.phone}`,
+    whatsapp: `https://wa.me/+${req.body.countryCode}${req.body.phone}`,
     country: req.body.country,
     gender: req.body.gender,
     age: req.body.age,
     msg: req.body.msg,
+    type: req.params.type,
+    plan: req.body.plan,
     title: "new student want to register",
     caption: "His",
     cap: "He",
@@ -99,16 +94,18 @@ app.post("/register/user", (req, res) => {
     data.cap = "She";
   }
 
+  res.send(data)
+
   ejs.renderFile("./views/regmail.ejs", data, function (err, ejsout) {
     transporter.sendMail({
       from: process.env.MAIL,
-      to: "testok.3090@gmail.com",
-      subject: "New registration inquire",
+      to: "Alikhlasins@gmail.com",
+      subject: "New Student want to register 😊",
       html: ejsout,
     });
 
     res.render("msg", {
-      msg: "Thank you, our team will mail you within 48 hours.",
+      msg: "Thank you, our team will mail you within 48 hours. please check your email and WhatsApp.",
     });
   });
 });

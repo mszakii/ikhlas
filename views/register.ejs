@@ -3,16 +3,17 @@
   <head>
     <%- include('partials/head') %>
     <!-- css -->
-    <link rel="stylesheet" href="css/register.css" />
+    <link rel="stylesheet" href="/css/register.css" />
     <!-- title and description -->
     <title>Register</title>
   </head>
   <body>
+    <div class="banner">
+      <div class="text">Register</div>
+      <img src="/assets/register.jpg" alt="register">
+    </div>
     <div class="parent">
-      <form action="/register/user" method="post">
-        <div class="caption">
-          <div class="title">Registration form</div>
-        </div>
+      <form action="/register/private" method="post" id="reqForm">
         <div class="group">
           <input
             type="text"
@@ -426,10 +427,11 @@
             name="phone"
             id="phone"
             minlength="6"
-            placeholder="Phone (+1408XXXXXXX)"
+            placeholder="WhatsApp number (408XXXXXXX)"
             required
           />
         </div>
+        <div class="des">make sure that number have a whatsApp</div>
         <div class="group-2">
           <select id="country" name="country" class="form-control">
             <option value="Afghanistan">Afghanistan</option>
@@ -721,21 +723,13 @@
             <option value="Zambia">Zambia</option>
             <option value="Zimbabwe">Zimbabwe</option>
           </select>
-          <input
-            type="number"
-            name="age"
-            id="age"
-            min="5"
-            max="80"
-            placeholder="Age"
-            required
-          />
+          <input type="date" name="age" id="age">
           <select name="gender" id="gender" required>
             <option value="male">male</option>
             <option value="female">female</option>
           </select>
         </div>
-        <input
+        <!-- <input
           type="password"
           name="password"
           id="password"
@@ -743,7 +737,7 @@
           maxlength="20"
           placeholder="Make a password"
           required
-        />
+        /> -->
         <select name="plan" id="plan">
           <optgroup label="30 mintes plans">
             <option value="MAIN-30-2">30 mintes 2 days weekly</option>
@@ -765,5 +759,10 @@
         <button type="submit" class="btn btn-green">register</button>
       </form>
     </div>
+
+    <!-- script -->
+    <script>
+      reqForm.action = `${location.pathname}`
+    </script>
   </body>
 </html>

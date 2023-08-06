@@ -4,18 +4,40 @@
   }
 }
 
-.parent {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+.banner {
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+}
+
+.banner .text {
+  position: absolute;
+  z-index: 2;
+  font-weight: bold;
+  font-size: 3rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--primary);
+}
+
+.banner img {
+  width: 100vw;
+  position: absolute;
+}
+
+@media (min-width: 1200px) {
+  .banner img {
+    width: 100vw;
+    position: absolute;
+    top: -150%;
+  }
 }
 
 form {
   border-radius: 20px;
   padding: 20px;
-  box-shadow: 0 0 10px #ddd;
-  max-width: 500px;
+  /* box-shadow: 0 0 10px #ddd; */
 }
 
 form .caption {
@@ -69,6 +91,14 @@ form .group-3 {
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 10px;
+}
+
+@media (max-width: 767px) {
+  form .group,
+  form .group-2,
+  form .group-3 {
+    display: block;
+  }
 }
 
 textarea {

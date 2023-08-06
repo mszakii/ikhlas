@@ -44,10 +44,15 @@ header nav a:hover {
   color: var(--primary);
 }
 
-header nav .login {
+header nav .whatsapp {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+}
+
+header nav .whatsapp img {
+  width: 35px;
 }
 
 header nav .login:hover {
