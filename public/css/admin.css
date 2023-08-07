@@ -1,0 +1,35 @@
+.login {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30%;
+  min-width: 320px;
+  max-width: 600px;
+  padding: var(--padding);
+  background: var(--Landingbg);
+  border-radius: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+input {
+  width: 100%;
+}
+
+.g {
+  position: relative;
+}
+
+.g span {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  user-select: none;
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('partials/head') %>
+    <!-- css -->
+    <link rel="stylesheet" href="/css/admin.css" />
+    <!-- title and description -->
+    <title>Alikhlas Institute Admin</title>
+  </head>
+  <body>
+    <div class="login">
+      <form action="/admin" method="post">
+        <input
+          type="text"
+          name="username"
+          id="username"
+          placeholder="Username"
+        />
+        <div class="g">
+          <input type="password" name="pass" id="pass" placeholder="Password" />
+          <span class="material-symbols-rounded" id="eye">
+            visibility_off
+          </span>
+        </div>
+        <button type="submit" class="btn btn-green">Login</button>
+      </form>
+    </div>
+
+    <!-- script -->
+    <script src="/js/admin.js" defer></script>
+  </body>
+</html>

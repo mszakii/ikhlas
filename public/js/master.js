@@ -16,8 +16,8 @@ submit.onclick = function () {
 };
 
 closeBtn.onclick = function () {
-  promo.style.display = "none"
-}
+  promo.style.display = "none";
+};
 
 // https://rive.app/community/4501-9160-mail-send/
 

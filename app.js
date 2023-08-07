@@ -2,12 +2,25 @@ const express = require("express");
 const app = express();
 const mailer = require("nodemailer");
 const ejs = require("ejs");
+const mongoose = require("mongoose");
+const Admin = require("./models/admin");
+const cookieParser = require("cookie-parser");
 
 require("dotenv").config();
+
+mongoose
+  .connect(process.env.DB)
+  .then(() => {
+    console.log(">>> connected to DB successfully!");
+  })
+  .catch(() => {
+    console.log(">>> Err faild to connect to DB (app.js)");
+  });
 
 app.use(express.static("public"));
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
 
 app.listen(3000, (req, res) => {
   console.log("Listing on port http://localhost:3000");
@@ -18,47 +31,44 @@ app.get("/", (req, res) => {
 });
 
 app.get("/plans/:type/register", (req, res) => {
-
   if (req.params.type === "private") {
     res.render("register", {
       plansOne: [
-        ["2 days weekly", "MAIN-30-2"], 
+        ["2 days weekly", "MAIN-30-2"],
         ["3 days weekly", "MAIN-30-3"],
         ["4 days weekly", "MAIN-30-4"],
         ["5 days weekly", "MAIN-30-5"],
         ["6 days weekly", "MAIN-30-6"],
       ],
       plansTwo: [
-        ["1 days weekly", "MAIN-60-1"], 
-        ["2 days weekly", "MAIN-60-2"], 
+        ["1 days weekly", "MAIN-60-1"],
+        ["2 days weekly", "MAIN-60-2"],
         ["3 days weekly", "MAIN-60-3"],
         ["4 days weekly", "MAIN-60-4"],
         ["5 days weekly", "MAIN-60-5"],
         ["6 days weekly", "MAIN-60-6"],
-      ]
+      ],
     });
   } else if (req.params.type === "circles") {
-    res.render("register", 
-      {
-        plansOne: [
-          ["2 days weekly", "CRCL-30-2"], 
-          ["3 days weekly", "CRCL-30-3"],
-          ["4 days weekly", "CRCL-30-4"],
-          ["5 days weekly", "CRCL-30-5"],
-          ["6 days weekly", "CRCL-30-6"],
-        ],
-        plansTwo: [
-          ["1 days weekly", "CRCL-60-1"], 
-          ["2 days weekly", "CRCL-60-2"], 
-          ["3 days weekly", "CRCL-60-3"],
-          ["4 days weekly", "CRCL-60-4"],
-          ["5 days weekly", "CRCL-60-5"],
-          ["6 days weekly", "CRCL-60-6"],
-        ]
-      }
-    );
+    res.render("register", {
+      plansOne: [
+        ["2 days weekly", "CRCL-30-2"],
+        ["3 days weekly", "CRCL-30-3"],
+        ["4 days weekly", "CRCL-30-4"],
+        ["5 days weekly", "CRCL-30-5"],
+        ["6 days weekly", "CRCL-30-6"],
+      ],
+      plansTwo: [
+        ["1 days weekly", "CRCL-60-1"],
+        ["2 days weekly", "CRCL-60-2"],
+        ["3 days weekly", "CRCL-60-3"],
+        ["4 days weekly", "CRCL-60-4"],
+        ["5 days weekly", "CRCL-60-5"],
+        ["6 days weekly", "CRCL-60-6"],
+      ],
+    });
   } else {
-    res.redirect("/error")
+    res.redirect("/error");
   }
 });
 
@@ -84,8 +94,39 @@ app.post("/site/promotion/codes", (req, res) => {
   res.send([
     ["FREE30", "30 minutes free lecture"],
     ["OFF25", "25% off for a month"],
-  ])
-})
+  ]);
+});
+
+// admin
+app.get("/admin", (req, res) => {
+  if (req.cookies.user_id != null) {
+    Admin.findById(req.cookies.user_id)
+      .then(() => {
+        res.send("user is done");
+      })
+      .catch((err) => {
+        res.clearCookie("user_id");
+        res.render("admin");
+      });
+  } else {
+    res.render("admin");
+  }
+});
+
+app.post("/admin", (req, res) => {
+  Admin.findOne({ user: req.body.username })
+    .then((admin) => {
+      if (admin.pass === req.body.pass) {
+        res.cookie("user_id", admin._id, { maxAge: 360000 });
+        res.send("Hello Saleh!");
+      } else {
+        res.send("Password is wrong");
+      }
+    })
+    .catch((err) => {
+      res.send("user not found!");
+    });
+});
 
 // post request
 const transporter = mailer.createTransport({
