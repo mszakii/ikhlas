@@ -1,8 +1,8 @@
-#scroll-btn {
+/* #scroll-btn {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  display: none; /* hide the button by default */
+  display: none; /* hide the button by default
   z-index: 1000;
   border: none;
   width: 40px;
@@ -14,6 +14,34 @@
   background: var(--plant-dark);
   color: white;
   cursor: pointer;
+} */
+
+.whatsapp {
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.whatsapp::after {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: var(--primary);
+  border-radius: 50%;
+  top: 0;
+  right: 0;
+}
+
+.whatsapp img {
+  width: 100%;
 }
 
 header {
@@ -60,7 +88,7 @@ header nav a:hover {
   color: var(--primary);
 }
 
-header nav .whatsapp {
+/* header nav .whatsapp {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -69,7 +97,7 @@ header nav .whatsapp {
 
 header nav .whatsapp img {
   width: 35px;
-}
+} */
 
 header nav .login:hover {
   color: var(--primary);
@@ -203,8 +231,97 @@ section .title .des {
   font-size: 1rem;
 }
 
+.more {
+  background: var(--secoundry);
+  color: white;
+  margin-bottom: 170px;
+}
+
+.more .parent {
+  position: relative;
+}
+
+.more .parent .intro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.more .intro h1 {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.more .intro > .des {
+  text-align: center;
+  margin-top: 20px;
+  color: #ccc;
+  font-size: 0.75rem;
+  width: 60%;
+}
+
+.more .cards {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  top: calc(100% - 150px);
+  gap: 20px;
+}
+
+@media (max-width: 922px) {
+  .more {
+    margin-bottom: 800px;
+  }
+  .more .cards {
+    flex-direction: column;
+  }
+}
+
+.more .cards .card {
+  padding: 20px;
+  width: 350px;
+  height: 300px;
+  background: var(--primary);
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  cursor: pointer;
+  transition: .25s;
+}
+
+.more .cards .card:nth-child(2) {
+  background: var(--danger);
+}
+
+.more .cards .card:last-child {
+  background: var(--warning);
+}
+
+.more .cards .card:hover {
+  transform: translateY(-10px);
+}
+
+.more .cards .card .icon span {
+  font-size: 3rem;
+}
+
+.more .cards .card h2 {
+  text-align: center;
+}
+
+.more .cards .card .des {
+  font-size: .75rem;
+}
+
 /* About */
-.about {
+/* .about {
   background: var(--bg);
   display: flex;
   align-items: center;
@@ -218,7 +335,7 @@ section .title .des {
 
 @media (max-width: 768px) {
   .about .parent {
-    flex-direction: column-reverse; /* moblie responsive */
+    flex-direction: column-reverse; /* moblie responsive
   }
 }
 
@@ -246,18 +363,18 @@ section .title .des {
 @media (max-width: 768px) {
   .about .left,
   .about .right {
-    width: 80%; /* Better size on moblie */
-    margin: 40px auto; /* seprate two sides */
+    width: 80%; /* Better size on moblie
+    margin: 40px auto; /* seprate two sides
   }
 
   .about .left .quran {
-    width: 50vw; /* Better size on moblie */
+    width: 50vw; /* Better size on moblie
   }
 }
 
 .about .right .btn {
   width: fit-content;
-}
+} */
 
 /* courses */
 .courses {
@@ -393,7 +510,7 @@ section.price {
   padding: 30px;
 }
 
-.parent .bigCard {
+.price .parent .bigCard {
   display: grid;
   width: 90%;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -402,7 +519,7 @@ section.price {
 }
 
 @media (max-width: 500px) {
-  .parent .bigCard {
+  .price .parent .bigCard {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -410,11 +527,11 @@ section.price {
   }
 }
 
-.parent .group {
+.price .parent .group {
   margin: 20px 0px;
 }
 
-.parent .card {
+.price .parent .card {
   width: 200px;
   height: 300px;
   border-top: 4px solid var(--plant-dark);
@@ -426,12 +543,12 @@ section.price {
   flex-direction: column;
 }
 
-.card h5 {
+.price .card h5 {
   color: var(--plant-dark);
   margin-top: 10px;
 }
 
-.card h3 {
+.price .card h3 {
   width: 110%;
   transform: translatex(-3%);
   background-color: var(--plant-dark);
@@ -442,7 +559,7 @@ section.price {
   box-shadow: 0px 0px 4px #000;
 }
 
-.card h3::before {
+.price .card h3::before {
   content: "";
   position: absolute;
   top: 100%;
@@ -458,25 +575,25 @@ section.price {
   filter: brightness(0.6);
 }
 
-.card span {
+.price .card span {
   font-size: 13px;
   opacity: 0.7;
 }
 
-.card hr {
+.price .card hr {
   margin: 10px;
 }
 
-.card .priceDiv {
+.price .card .priceDiv {
   opacity: 0.9;
   color: var(--plant-dark);
 }
 
-.card .priceDiv .s2 {
+.price .card .priceDiv .s2 {
   font-size: 13px;
 }
 
-.card .btn {
+.price .card .btn {
   width: 100%;
   text-align: center;
   border: none;
@@ -485,7 +602,7 @@ section.price {
   transition-duration: 0.3s;
 }
 
-.card .btn:hover {
+.price .card .btn:hover {
   color: #fff;
   background-color: var(--plant-dark);
 }
