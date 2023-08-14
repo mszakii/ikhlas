@@ -268,11 +268,12 @@ section .title .des {
   align-items: center;
   position: absolute;
   width: 100%;
+  left: 0;
   top: calc(100% - 150px);
   gap: 20px;
 }
 
-@media (max-width: 922px) {
+@media (max-width: 768px) {
   .more {
     margin-bottom: 800px;
   }
@@ -318,6 +319,7 @@ section .title .des {
 
 .more .cards .card .des {
   font-size: .75rem;
+  text-align: center;
 }
 
 /* About */
