@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head') %>
+    <!-- css -->
+    <link rel="stylesheet" href="../css/plans.css" />
+    <!-- title and description -->
+    <title>Al-Ikhlas</title>
+  </head>
+  <body>
+    <nav>
+      <div class="parent">
+        <div class="logo">
+          <img src="<%= logo %>" alt="Al Ikhlas" />
+        </div>
+        <div
+          class="btn btn-green"
+          onclick="location.href='/plans/<%= plan %>/register'"
+        >
+          Register
+        </div>
+      </div>
+    </nav>
+
+    <header>
+      <div class="landing">
+        <div class="parent">
+          <div class="left">
+            <h1><%= title %></h1>
+            <div class="des">
+              Learn Quran and tajweed with our expert tutors. 30+ mintes plans.
+              fixed scheduled days
+            </div>
+            <div class="btn btn-green" onclick="location.href='#pricing'">
+              See our plans
+            </div>
+          </div>
+          <div class="right">
+            <img class="quran" src="<%= logo %>" alt="quran" />
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="price" id="pricing">
+      <h1 class="titles">
+        Our <%= plan %> plan <br />
+        monthly package pricing
+      </h1>
+      <div class="parent">
+        <div id="div30" class="circlesCard">
+          <div class="card">
+            <h5>1 day <span>weekly</span></h5>
+            <h3>80$ <span>/month</span></h3>
+            <div class="priceDiv">
+              <div>3 <span class="s2">Other Students</span></div>
+              <div>4 <span class="s2">Classes /Month</span></div>
+              <hr />
+              <div>60 <span class="s2">Mins /Day</span></div>
+              <div>60 <span class="s2">Mins /Week</span></div>
+              <div>240 <span class="s2">Mins /Month</span></div>
+            </div>
+            <div class="btn btn-rounded">Choose</div>
+          </div>
+          <div class="card">
+            <h5>2 days <span>weekly</span></h5>
+            <h3>140$ <span>/month</span></h3>
+            <div class="priceDiv">
+              <div>3 <span class="s2">Other Students</span></div>
+              <div>8 <span class="s2">Classes /Month</span></div>
+              <hr />
+              <div>60 <span class="s2">Mins /Day</span></div>
+              <div>120 <span class="s2">Mins /Week</span></div>
+              <div>480 <span class="s2">Mins /Month</span></div>
+            </div>
+            <div class="btn btn-rounded">Choose</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====Footer===== -->
+    <%- include('../partials/footer') %>
+    <!-- =====Footer===== -->
+
+    <script src="../js/pricing-circles.js"></script>
+  </body>
+</html>

@@ -118,6 +118,14 @@ section.price {
   column-gap: 74px;
 }
 
+.parent .circlesCard {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  flex-wrap: wrap;
+}
+
 @media (max-width: 500px) {
   .parent .bigCard {
     display: flex;

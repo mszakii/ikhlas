@@ -76,13 +76,13 @@ app.get("/plans/:type/register", (req, res) => {
 app.get("/plans/private", (req, res) => {
   res.render("plans/private", {
     plan: "private",
-    title: "Online Quran Private Lessons for adults",
+    title: "Online Quran Private Lessons",
     logo: "/assets/3.png",
   });
 });
 
 app.get("/plans/circles", (req, res) => {
-  res.render("plans/private", {
+  res.render("plans/circles", {
     plan: "circles",
     title: "Online Quran Private Lessons for adults and kids",
     logo: "/assets/2.png",
