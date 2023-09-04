@@ -609,6 +609,39 @@ section.price {
   background-color: var(--plant-dark);
 }
 /* End price  */
+
+/* video */
+.video {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video iframe {
+  border-radius: 10px;
+}
+
+@media (max-width: 380px) {
+  .video iframe {
+    width: 300px !important;
+    height: 168.75px !important;
+  }
+}
+
+@media (max-width: 580px) {
+  .video iframe {
+    width: 380px !important;
+    height: 213.75px !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .video iframe {
+    width: 700px !important;
+    height: 393.75px !important;
+  }
+}
+
 /* contact */
 .contact {
   background: var(--bg);
