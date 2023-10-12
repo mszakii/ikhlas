@@ -150,14 +150,26 @@ app.post("/send", (req, res) => {
     data["phone"] = "not given!";
   }
 
-  ejs.renderFile("./views/mail.ejs", data, function (err, ejsout) {
-    transporter.sendMail({
-      from: process.env.MAIL,
-      to: "alikhlasins@gmail.com",
-      subject: "Support request 👮‍♂️",
-      html: ejsout,
+  ejs.renderFile("./views/mail.ejs", data, async function (err, ejsout) {
+    await new Promise((resolve, reject) => {
+      transporter.sendMail(
+        {
+          from: process.env.MAIL,
+          to: "alikhlasins@gmail.com",
+          subject: "Support request 👮‍♂️",
+          html: ejsout,
+        },
+        (err, info) => {
+          if (err) {
+            res.render("msg", {
+              msg: "Error there is a problem sending your message! Please Contact us via Email.",
+            });
+          } else {
+            res.render("msg", { msg: "Message was send successfully!" });
+          }
+        }
+      );
     });
-    res.render("msg", { msg: "Message was send successfully!" });
   });
 });
 
@@ -184,16 +196,27 @@ app.post("/plans/:type/register", (req, res) => {
     data.cap = "She";
   }
 
-  ejs.renderFile("./views/regmail.ejs", data, function (err, ejsout) {
-    transporter.sendMail({
-      from: process.env.MAIL,
-      to: "Alikhlasins@gmail.com",
-      subject: "New Student want to register 😊",
-      html: ejsout,
-    });
-
-    res.render("msg", {
-      msg: "Thank you, our team will mail you within 48 hours. please check your email and WhatsApp.",
+  ejs.renderFile("./views/regmail.ejs", data, async function (err, ejsout) {
+    await new Promise((resolve, reject) => {
+      transporter.sendMail(
+        {
+          from: process.env.MAIL,
+          to: "Alikhlasins@gmail.com",
+          subject: "New Student want to register 😊",
+          html: ejsout,
+        },
+        (err, info) => {
+          if (err) {
+            res.render("msg", {
+              msg: "Sorry there was an error. Please contact us via Mail or Whatsapp.",
+            });
+          } else {
+            res.render("msg", {
+              msg: "Thank you, our team will mail you within 48 hours. please check your email and WhatsApp.",
+            });
+          }
+        }
+      );
     });
   });
 });
