@@ -66,6 +66,24 @@ header .alert .close {
   cursor: pointer;
 }
 
+header .alert.palestine {
+  background: linear-gradient(black 33%, white 33%, white 66%, #009736 66%);
+}
+
+header .alert.palestine::before {
+  content: "";
+  position: absolute;
+  border-color: transparent;
+  border-style: solid;
+  border-left-width: 22px;
+  border-right-width: 22px;
+  border-top: 0;
+  border-bottom: 40px solid #ed2a35;
+  left: -3px;
+  top: 0px;
+  transform: rotate(90deg);
+}
+
 header nav {
   display: flex;
   padding: var(--padding);
@@ -294,7 +312,7 @@ section .title .des {
   flex-direction: column;
   gap: 20px;
   cursor: pointer;
-  transition: .25s;
+  transition: 0.25s;
 }
 
 .more .cards .card:nth-child(2) {
@@ -318,7 +336,7 @@ section .title .des {
 }
 
 .more .cards .card .des {
-  font-size: .75rem;
+  font-size: 0.75rem;
   text-align: center;
 }
 
