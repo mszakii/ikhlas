@@ -198,6 +198,11 @@ app.post("/plans/:type/register", (req, res) => {
   });
 });
 
+// error log
+app.get("/dev/err", (req, res) => {
+  res.send(process.env.MAIL);
+});
+
 // Page not found
 
 app.use((req, res) => {
