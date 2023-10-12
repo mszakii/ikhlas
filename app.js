@@ -130,7 +130,9 @@ app.post("/admin", (req, res) => {
 
 // post request
 const transporter = mailer.createTransport({
-  service: "gmail",
+  host: "mail.alikhlas-institute.com",
+  port: 465,
+  secure: true,
   auth: {
     user: process.env.MAIL,
     pass: process.env.MAIL_PASS,
