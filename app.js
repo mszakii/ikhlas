@@ -94,6 +94,7 @@ app.post("/site/promotion/codes", (req, res) => {
   res.send([
     ["FREE30", "30 minutes free lecture"],
     ["OFF25", "25% off for a month"],
+    ["MONTH6", "Special Discount For 6 Month Plan"],
   ]);
 });
 
