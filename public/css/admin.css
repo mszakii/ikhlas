@@ -70,3 +70,8 @@ table tr td {
 table tr:nth-child(even) {
   background: var(--Landingbg);
 }
+
+table .btn-danger {
+  background: var(--danger);
+  color: white;
+}
