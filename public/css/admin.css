@@ -33,3 +33,40 @@ input {
   cursor: pointer;
   user-select: none;
 }
+
+header {
+  padding: var(--padding);
+  background: var(--Landingbg);
+}
+
+section.data {
+  padding: 20px;
+}
+
+.new {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.new form {
+  flex-direction: row;
+}
+
+table {
+  width: 100%;
+}
+
+table tr th {
+  background: var(--primary);
+  padding: var(--padding);
+  color: white;
+}
+
+table tr td {
+  padding: var(--padding);
+}
+
+table tr:nth-child(even) {
+  background: var(--Landingbg);
+}

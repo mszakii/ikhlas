@@ -119,7 +119,8 @@ app.post("/admin", (req, res) => {
     .then((admin) => {
       if (admin.pass === req.body.pass) {
         res.cookie("user_id", admin._id, { maxAge: 360000 });
-        res.send("Hello Saleh!");
+        // res.send("Hello Saleh!");
+        res.render("dash")
       } else {
         res.send("Password is wrong");
       }
