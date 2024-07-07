@@ -75,3 +75,22 @@ table .btn-danger {
   background: var(--danger);
   color: white;
 }
+
+form select {
+  width: 100%;
+}
+
+select optgroup {
+  background: var(--plant-dark);
+  color: white;
+}
+
+select option:nth-child(even) {
+  background: #eee;
+  color: black;
+}
+
+select option:nth-child(odd) {
+  background: #fff;
+  color: black;
+}

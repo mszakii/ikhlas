@@ -4,6 +4,7 @@ const mailer = require("nodemailer");
 const ejs = require("ejs");
 const mongoose = require("mongoose");
 const Admin = require("./models/admin");
+const Users = require("./models/users");
 const cookieParser = require("cookie-parser");
 
 require("dotenv").config();
@@ -103,7 +104,8 @@ app.get("/admin", (req, res) => {
   if (req.cookies.user_id != null) {
     Admin.findById(req.cookies.user_id)
       .then(() => {
-        res.send("user is done");
+        // res.send("user is done");
+        res.render("dash");
       })
       .catch((err) => {
         res.clearCookie("user_id");
@@ -120,13 +122,31 @@ app.post("/admin", (req, res) => {
       if (admin.pass === req.body.pass) {
         res.cookie("user_id", admin._id, { maxAge: 360000 });
         // res.send("Hello Saleh!");
-        res.render("dash")
+        res.render("dash");
       } else {
         res.send("Password is wrong");
       }
     })
     .catch((err) => {
       res.send("user not found!");
+    });
+});
+
+app.post("/admin/newUser", (req, res) => {
+  Users.create({
+    name: req.body.name,
+    phone: req.body.phone,
+    email: req.body.email,
+    country: req.body.country,
+    link: req.body.link,
+  })
+    .then(() => {
+      res.render("msg", { msg: "User Added Successfully!" });
+    })
+    .catch((err) => {
+      res.render("msg", {
+        msg: "User Not Added, Please Call The Owner to restart DB.",
+      });
     });
 });
 

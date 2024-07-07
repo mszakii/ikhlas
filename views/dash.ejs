@@ -18,19 +18,19 @@
           <form action="/admin/newUser" method="post">
             <input
               type="text"
-              name="addUserName"
+              name="name"
               id="addNewUserName"
               placeholder="Full Name"
             />
             <input
               type="number"
-              name="addUserPhone"
+              name="phone"
               id="addNewUserPhone"
               placeholder="Phone"
             />
             <input
               type="email"
-              name="addUserEmail"
+              name="email"
               id="addNewUserEmail"
               placeholder="Email Address"
             />
@@ -329,6 +329,12 @@
               <option value="Zambia">Zambia</option>
               <option value="Zimbabwe">Zimbabwe</option>
             </select>
+            <input
+              type="text"
+              name="link"
+              id="addNewUserMeeting"
+              placeholder="Meeting Link"
+            />
             <!-- Contries list from Register -->
             <button class="btn btn-green">Save</button>
           </form>
