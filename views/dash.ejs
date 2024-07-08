@@ -21,21 +21,36 @@
               name="name"
               id="addNewUserName"
               placeholder="Full Name"
+              required
             />
             <input
               type="number"
               name="phone"
               id="addNewUserPhone"
               placeholder="Phone"
+              required
             />
             <input
               type="email"
               name="email"
               id="addNewUserEmail"
               placeholder="Email Address"
+              required
+            />
+            <input
+              type="text"
+              name="teacher"
+              id="addTeacher"
+              placeholder="Teacher"
+              value="saleh"
             />
             <!-- Contries list from Register -->
-            <select id="addUserCountry" name="country" class="form-control">
+            <select
+              id="addUserCountry"
+              name="country"
+              class="form-control"
+              required
+            >
               <option value="Afghanistan">Afghanistan</option>
               <option value="Åland Islands">Åland Islands</option>
               <option value="Albania">Albania</option>
@@ -329,11 +344,16 @@
               <option value="Zambia">Zambia</option>
               <option value="Zimbabwe">Zimbabwe</option>
             </select>
+            <select name="gender" id="gender" required>
+              <option value="male">male</option>
+              <option value="female">female</option>
+            </select>
             <input
               type="text"
               name="link"
               id="addNewUserMeeting"
               placeholder="Meeting Link"
+              required
             />
             <!-- Contries list from Register -->
             <button class="btn btn-green">Save</button>
@@ -348,28 +368,35 @@
               <th>Reg. Date</th>
               <th>Phone</th>
               <th>Email</th>
+              <th>teacher</th>
               <th>Meeting</th>
-              <th>Edit</th>
+              <!-- <th>Edit</th> -->
             </tr>
+
+            <% data.forEach(user => { %>
             <tr>
-              <td>5507</td>
-              <td>Ahmed Ali</td>
-              <td>US</td>
-              <td>07/07/2024</td>
-              <td>+15552377851</td>
-              <td>AhmedAli@gmail.com</td>
+              <td><%= user.id %></td>
+              <td><%= user.name %></td>
+              <td><%= user.country %></td>
+              <td><%= user.regDate.slice(3, 21) %></td>
+              <td>
+                <a href="https://wa.me/+<%= user.phone %>"><%= user.phone %></a>
+              </td>
+              <td><%= user.email %></td>
+              <td><%= user.teacher %></td>
               <td class="center">
                 <button
                   class="btn btn-green"
-                  onclick="location.href = 'https://us05web.zoom.us/j/82328477379?pwd=EMI4tknHZTbpB1u2MxLEaz32KYeQGX.1'"
+                  onclick="location.href = '<% user.link %>'"
                 >
                   Open
                 </button>
               </td>
-              <td class="center">
-                <button class="btn btn-danger">Edit</button>
-              </td>
+              <!-- <td class="center">
+                <button class="btn btn-danger" id="<% user.id %>">Edit</button>
+              </td> -->
             </tr>
+            <% }) %>
           </table>
         </div>
       </div>

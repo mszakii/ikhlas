@@ -105,7 +105,16 @@ app.get("/admin", (req, res) => {
     Admin.findById(req.cookies.user_id)
       .then(() => {
         // res.send("user is done");
-        res.render("dash");
+
+        Users.find()
+          .then((data) => {
+            res.render("dash", { data });
+          })
+          .catch((err) => {
+            res.send("Please Reload The Page!");
+          });
+
+        // res.render("dash");
       })
       .catch((err) => {
         res.clearCookie("user_id");
@@ -137,7 +146,9 @@ app.post("/admin/newUser", (req, res) => {
     name: req.body.name,
     phone: req.body.phone,
     email: req.body.email,
+    teacher: req.body.teacher.toLowerCase(),
     country: req.body.country,
+    gender: req.body.gender,
     link: req.body.link,
   })
     .then(() => {
