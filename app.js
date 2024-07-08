@@ -149,15 +149,24 @@ app.post("/admin/newUser", (req, res) => {
     teacher: req.body.teacher.toLowerCase(),
     country: req.body.country,
     gender: req.body.gender,
+    birthDate: req.body.birthDate,
     link: req.body.link,
   })
     .then(() => {
-      res.render("msg", { msg: "User Added Successfully!" });
+      res.send("User Added Successfully!");
     })
     .catch((err) => {
       res.render("msg", {
         msg: "User Not Added, Please Call The Owner to restart DB.",
       });
+    });
+});
+
+app.post("/admin/deleteUser", (req, res) => {
+  Users.deleteOne({ id: req.body.id })
+    .then((msg) => res.send("User Deleted Successfully!"))
+    .catch((err) => {
+      res.render("msg", { msg: "User Not Deleted!" });
     });
 });
 

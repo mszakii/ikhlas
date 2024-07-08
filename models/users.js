@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const { required } = require("nodemon/lib/config");
 
 // Make a unique id that it's probability is 0.0002118%.
 getUniqueId = () => Math.floor(Math.random() * 900000) + 100000;
@@ -36,6 +37,10 @@ const Schema = new mongoose.Schema({
   teacher: {
     type: String,
     default: "saleh",
+  },
+  birthDate: {
+    type: Date,
+    required: true,
   },
   regDate: {
     type: String,

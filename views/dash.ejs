@@ -13,7 +13,7 @@
     </header>
 
     <section class="data">
-      <div class="parent">
+      <div class="parent table">
         <div class="new">
           <form action="/admin/newUser" method="post">
             <input
@@ -348,6 +348,7 @@
               <option value="male">male</option>
               <option value="female">female</option>
             </select>
+            <input type="date" name="birthDate" id="addNewBirthDate" required />
             <input
               type="text"
               name="link"
@@ -366,10 +367,12 @@
               <th>Name</th>
               <th>Country</th>
               <th>Reg. Date</th>
+              <th>Birth Date</th>
               <th>Phone</th>
               <th>Email</th>
               <th>teacher</th>
               <th>Meeting</th>
+              <th>Delete</th>
               <!-- <th>Edit</th> -->
             </tr>
 
@@ -378,23 +381,43 @@
               <td><%= user.id %></td>
               <td><%= user.name %></td>
               <td><%= user.country %></td>
-              <td><%= user.regDate.slice(3, 21) %></td>
-              <td>
-                <a href="https://wa.me/+<%= user.phone %>"><%= user.phone %></a>
+              <td class="small"><%= user.regDate.toString().slice(3, 16) %></td>
+              <td class="small">
+                <%= user.birthDate.toString().slice(3, 16) %>
               </td>
-              <td><%= user.email %></td>
-              <td><%= user.teacher %></td>
+              <td>
+                <a href="https://wa.me/+<%= user.phone %>" target="_blank"
+                  ><%= user.phone %></a
+                >
+              </td>
+              <td>
+                <a
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=<%= user.email %>&body=Hello <%= user.name %>"
+                  target="_blank"
+                  ><%= user.email %></a
+                >
+              </td>
+              <td class="small"><%= user.teacher %></td>
               <td class="center">
                 <button
                   class="btn btn-green"
-                  onclick="location.href = '<% user.link %>'"
+                  onclick="window.open('<%= user.link %>')"
                 >
                   Open
                 </button>
               </td>
-              <!-- <td class="center">
-                <button class="btn btn-danger" id="<% user.id %>">Edit</button>
-              </td> -->
+              <td class="center">
+                <form action="/admin/deleteUser" method="post">
+                  <button
+                    type="submit"
+                    name="id"
+                    class="btn btn-danger"
+                    value="<%= user.id %>"
+                  >
+                    Delete
+                  </button>
+                </form>
+              </td>
             </tr>
             <% }) %>
           </table>

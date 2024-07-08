@@ -60,6 +60,18 @@ section.data {
   flex-direction: row;
 }
 
+@media (min-width: 1200px) {
+  .parent.table {
+    width: 1200px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .parent.table {
+    width: 1500px;
+  }
+}
+
 table {
   width: 100%;
 }
@@ -72,6 +84,15 @@ table tr th {
 
 table tr td {
   padding: var(--padding);
+  max-width: 150px;
+  /* overflow-x: auto; */
+  overflow-wrap: break-word;
+  text-align: center;
+}
+
+table tr td.small {
+  width: 40px;
+  overflow-x: none;
 }
 
 table tr:nth-child(even) {
