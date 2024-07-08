@@ -39,7 +39,7 @@ const Schema = new mongoose.Schema({
     default: "saleh",
   },
   birthDate: {
-    type: Date,
+    type: Number,
     required: true,
   },
   regDate: {

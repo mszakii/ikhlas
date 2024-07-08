@@ -348,7 +348,15 @@
               <option value="male">male</option>
               <option value="female">female</option>
             </select>
-            <input type="date" name="birthDate" id="addNewBirthDate" required />
+            <input
+              type="number"
+              name="birthDate"
+              id="addNewBirthDate"
+              placeholder="Birth Year"
+              min="1960"
+              max="<%= new Date().getFullYear() - 3 %>"
+              required
+            />
             <input
               type="text"
               name="link"
@@ -383,7 +391,7 @@
               <td><%= user.country %></td>
               <td class="small"><%= user.regDate.toString().slice(3, 16) %></td>
               <td class="small">
-                <%= user.birthDate.toString().slice(3, 16) %>
+                <%= new Date().getFullYear() - user.birthDate %>
               </td>
               <td>
                 <a href="https://wa.me/+<%= user.phone %>" target="_blank"
