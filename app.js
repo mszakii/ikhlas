@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const axios = require('axios');
 const mailer = require("nodemailer");
 const ejs = require("ejs");
 const mongoose = require("mongoose");
@@ -181,40 +182,54 @@ const transporter = mailer.createTransport({
   },
 });
 
-app.post("/send", (req, res) => {
-  const data = {
-    name: req.body.name,
-    mail: req.body.mail,
-    phone: req.body.phone,
-    msg: req.body.msg,
-    title: "new message form contact section",
-  };
+app.post("/send", async (req, res) => {
+  const token = req.body["g-recaptcha-response"];
+  const verificationUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${token}`;
 
-  if (data.phone.length == 0) {
-    data["phone"] = "not given!";
+  try {
+    const response = await axios.post(verificationUrl);
+    const success = response.data.success;
+
+    if (success) {
+      const data = {
+        name: req.body.name,
+        mail: req.body.mail,
+        phone: req.body.phone,
+        msg: req.body.msg,
+        title: "new message form contact section",
+      };
+
+      if (data.phone.length == 0) {
+        data["phone"] = "not given!";
+      }
+
+      ejs.renderFile("./views/mail.ejs", data, async function (err, ejsout) {
+        await new Promise((resolve, reject) => {
+          transporter.sendMail(
+            {
+              from: process.env.MAIL,
+              to: "alikhlasins@gmail.com",
+              subject: "Support request 👮‍♂️",
+              html: ejsout,
+            },
+            (err, info) => {
+              if (err) {
+                res.render("msg", {
+                  msg: "Error there is a problem sending your message! Please Contact us via Email.",
+                });
+              } else {
+                res.render("msg", { msg: "Message was send successfully!" });
+              }
+            }
+          );
+        });
+      });
+    } else {
+      res.render("msg", { msg: "reCAPTCHA failed. Please try again." });
+    }
+  } catch (err) {
+    res.render("msg", { msg: "reCAPTCHA failed. Please try again." });
   }
-
-  ejs.renderFile("./views/mail.ejs", data, async function (err, ejsout) {
-    await new Promise((resolve, reject) => {
-      transporter.sendMail(
-        {
-          from: process.env.MAIL,
-          to: "alikhlasins@gmail.com",
-          subject: "Support request 👮‍♂️",
-          html: ejsout,
-        },
-        (err, info) => {
-          if (err) {
-            res.render("msg", {
-              msg: "Error there is a problem sending your message! Please Contact us via Email.",
-            });
-          } else {
-            res.render("msg", { msg: "Message was send successfully!" });
-          }
-        }
-      );
-    });
-  });
 });
 
 app.post("/plans/:type/register", (req, res) => {

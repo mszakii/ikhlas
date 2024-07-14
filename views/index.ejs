@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="css/master.css" />
     <!-- title and description -->
     <title>Alikhlas Institute</title>
+    <!-- security -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <!-- Rive -->
     <script src="https://unpkg.com/@rive-app/canvas@1.0.102"></script>
   </head>
@@ -485,6 +487,10 @@
               required
               placeholder="For support or inquiries"
             ></textarea>
+            <div
+              class="g-recaptcha"
+              data-sitekey="6Lee8w8qAAAAAL1dJgt8XsanqVkLoi9xTIPbTYhh"
+            ></div>
             <button class="btn btn-blue" id="submit">Send</button>
           </form>
         </div>
