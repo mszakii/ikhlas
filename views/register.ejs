@@ -739,13 +739,18 @@
           required
         /> -->
         <select name="plan" id="plan">
-          <optgroup label="30 mintes plans">
+          <optgroup label="<%= title[0] %>">
             <% plansOne.forEach(plan => { %>
               <option value="<%= plan[1] %>"><%= plan[0] %></option>
             <% }) %>
           </optgroup>
-          <optgroup label="60 mintes plans">
+          <optgroup label="<%= title[1] %>">
             <% plansTwo.forEach(plan => { %>
+              <option value="<%= plan[1] %>"><%= plan[0] %></option>
+            <% }) %>
+          </optgroup>
+          <optgroup label="<%= title[2] %>">
+            <% plansThree.forEach(plan => { %>
               <option value="<%= plan[1] %>"><%= plan[0] %></option>
             <% }) %>
           </optgroup>

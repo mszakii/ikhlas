@@ -340,123 +340,6 @@ section .title .des {
   text-align: center;
 }
 
-/* About */
-/* .about {
-  background: var(--bg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.about .parent {
-  display: flex;
-  height: 100%;
-}
-
-@media (max-width: 768px) {
-  .about .parent {
-    flex-direction: column-reverse; /* moblie responsive
-  }
-}
-
-.about .left {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 50%;
-}
-
-.about .left .quran {
-  max-width: 300px;
-  width: 20vw;
-}
-
-.about .right {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: var(--padding);
-  gap: 20px;
-  width: 50%;
-}
-
-@media (max-width: 768px) {
-  .about .left,
-  .about .right {
-    width: 80%; /* Better size on moblie
-    margin: 40px auto; /* seprate two sides
-  }
-
-  .about .left .quran {
-    width: 50vw; /* Better size on moblie
-  }
-}
-
-.about .right .btn {
-  width: fit-content;
-} */
-
-/* courses */
-.courses {
-  color: #fff;
-  /* background: var(--section); */
-}
-
-.courses .parent {
-  background: url("/assets/clouds.svg");
-  min-height: 100vh;
-  padding: 20px 30px;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  flex-direction: column;
-  color: inherit;
-}
-
-.courses .bigdiv {
-  margin-top: 30px;
-  display: grid;
-  grid-auto-columns: auto;
-}
-
-.courses .bigdiv > div {
-  width: 100%;
-  display: grid;
-  margin: 10px 0px;
-  gap: 20px;
-}
-
-.courses .bigdiv > div:nth-child(1) {
-  grid-template-columns: auto auto;
-}
-
-.courses .bigdiv > div:nth-child(2) {
-  grid-template-columns: auto auto auto;
-}
-
-.item {
-  background-color: #000;
-  border-radius: 10px;
-  min-height: 150px;
-  box-shadow: 0px 0px 5px #000;
-  overflow: hidden;
-  display: flex;
-  align-content: center;
-  flex-wrap: wrap;
-}
-
-.item img {
-  width: 100%;
-}
-
-@media (max-width: 400px) {
-  .courses .bigdiv > div {
-    grid-template-columns: auto !important;
-  }
-}
-
-/* End courses */
-
 /* plans */
 section.plans {
   background: url("/assets/clouds.svg");
@@ -516,117 +399,52 @@ section.plans {
 
 /* plans */
 
-/* price */
-section.price {
-  background-color: var(--Landingbg);
+/* Courses */
+.courses {
+  background: url("/assets/clouds.svg");
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.price .parent {
+.courses .parent .cards {
   display: flex;
-  align-items: center;
   justify-content: space-evenly;
-  flex-direction: column;
-  min-height: 100vh;
-  padding: 30px;
+  flex-wrap: wrap;
 }
 
-.price .parent .bigCard {
-  display: grid;
-  width: 90%;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  row-gap: 20px;
-  column-gap: 74px;
+.courses .parent .card {
+  background: #fff;
+  box-shadow: 0 0 5px #ddd;
+  margin: 20px 0;
+  width: 400px;
+  min-height: 450px;
+  border-radius: 20px;
+  overflow: hidden;
 }
 
-@media (max-width: 500px) {
-  .price .parent .bigCard {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    flex-direction: column;
-  }
+.courses .parent .card .info {
+  font-size: 1.25rem;
+  padding: var(--padding);
+  font-weight: bold;
 }
 
-.price .parent .group {
-  margin: 20px 0px;
+.courses .parent .card .des {
+  font-size: 0.75rem;
+  padding: 0 var(--padding) var(--padding) var(--padding);
 }
 
-.price .parent .card {
-  width: 200px;
-  height: 300px;
-  border-top: 4px solid var(--plant-dark);
-  border-radius: 5px;
-  box-shadow: 0px 0px 1px #000;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: column;
+.courses .parent .card .btn {
+  font-size: 0.75rem;
+  margin: 0 var(--padding) var(--padding) var(--padding);
+  
 }
 
-.price .card h5 {
-  color: var(--plant-dark);
-  margin-top: 10px;
-}
-
-.price .card h3 {
-  width: 110%;
-  transform: translatex(-3%);
-  background-color: var(--plant-dark);
-  padding: 10px;
-  color: #fff;
-  text-align: center;
-  position: relative;
-  box-shadow: 0px 0px 4px #000;
-}
-
-.price .card h3::before {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 0px;
-  width: 7.5%;
-  height: 0;
-  padding-bottom: 7.5%;
-  background-image: linear-gradient(
-    225deg,
-    var(--plant-dark) 50%,
-    transparent 50%
-  );
-  filter: brightness(0.6);
-}
-
-.price .card span {
-  font-size: 13px;
-  opacity: 0.7;
-}
-
-.price .card hr {
-  margin: 10px;
-}
-
-.price .card .priceDiv {
-  opacity: 0.9;
-  color: var(--plant-dark);
-}
-
-.price .card .priceDiv .s2 {
-  font-size: 13px;
-}
-
-.price .card .btn {
+.courses .parent .card img {
   width: 100%;
-  text-align: center;
-  border: none;
-  border-top: 2px solid var(--plant-dark);
-  color: var(--plant-dark);
-  transition-duration: 0.3s;
+  transform: scale(0.8);
 }
-
-.price .card .btn:hover {
-  color: #fff;
-  background-color: var(--plant-dark);
-}
-/* End price  */
+/* Courses */
 
 /* video */
 .video {
@@ -711,6 +529,12 @@ section.price {
   .contact .right .form {
     width: 70vw;
     max-width: 450px;
+  }
+}
+
+@media (max-width: 767px) {
+  .g-recaptcha {
+    transform: scale(0.8);
   }
 }
 

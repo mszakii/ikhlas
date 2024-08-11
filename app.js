@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const axios = require('axios');
+const axios = require("axios");
 const mailer = require("nodemailer");
 const ejs = require("ejs");
 const mongoose = require("mongoose");
@@ -35,6 +35,7 @@ app.get("/", (req, res) => {
 app.get("/plans/:type/register", (req, res) => {
   if (req.params.type === "private") {
     res.render("register", {
+      title: ["30 mintes plans", "60 mintes plans", ""],
       plansOne: [
         ["2 days weekly", "MAIN-30-2"],
         ["3 days weekly", "MAIN-30-3"],
@@ -50,9 +51,11 @@ app.get("/plans/:type/register", (req, res) => {
         ["5 days weekly", "MAIN-60-5"],
         ["6 days weekly", "MAIN-60-6"],
       ],
+      plansThree: [],
     });
   } else if (req.params.type === "circles") {
     res.render("register", {
+      title: ["30 mintes plans", "60 mintes plans", ""],
       plansOne: [
         ["2 days weekly", "CRCL-30-2"],
         ["3 days weekly", "CRCL-30-3"],
@@ -67,6 +70,32 @@ app.get("/plans/:type/register", (req, res) => {
         ["4 days weekly", "CRCL-60-4"],
         ["5 days weekly", "CRCL-60-5"],
         ["6 days weekly", "CRCL-60-6"],
+      ],
+      plansThree: [],
+    });
+  } else if (req.params.type === "courses") {
+    res.render("register", {
+      title: ["Arabic Courses", "Islamic Studies Courses", "Qurainc Courses"],
+      plansOne: [
+        ["Arabic Conversation", "ARAB-CONV"],
+        ["Arabic Egyption Dialect", "ARAB-EGYP"],
+        ["Arabic Reading", "ARAB-READ"],
+      ],
+      plansTwo: [
+        ["Islamic Aqidah", "ISLM-AQID"],
+        ["Islamic Fiqh", "ISLM-FIQH"],
+        ["Islamic Hadith", "ISLM-HADI"],
+        ["Islamic History", "ISLM-HIST"],
+        ["Islamic Seerah", "ISLM-SEER"],
+        ["Islamic Stories", "ISLM-SORE"],
+        ["Islamic Tafseer", "ISLM-TAFS"],
+        ["Islamic Tarbyah", "ISLM-TARB"],
+      ],
+      plansThree: [
+        ["Qaida and Noor al byan", "QURN-QNAB"],
+        ["Quran Memorization", "QURN-MEMO"],
+        ["Quran Recitation", "QURN-RECI"],
+        ["Quran Tajweed", "QURN-TAJW"],
       ],
     });
   } else {
@@ -89,6 +118,18 @@ app.get("/plans/circles", (req, res) => {
     title: "Online Quran Private Lessons for adults and kids",
     logo: "/assets/2.png",
   });
+});
+
+// Courses
+app.get("/courses/:type", (req, res) => {
+  let type = req.params.type;
+
+  data = {
+    name: `${type[0].toUpperCase()}${type.slice(1)}`,
+    type: type,
+    logo: `/assets/${type}_courses.png`,
+  };
+  res.render("courses", { data });
 });
 
 // Codes API

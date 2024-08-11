@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('partials/head') %>
+    <!-- css -->
+    <link rel="stylesheet" href="/css/plans.css" />
+    <link rel="stylesheet" href="/css/courses.css" />
+    <!-- title and description -->
+    <title><%= data.name %> Courses 👨🏻‍🎓</title>
+  </head>
+  <body>
+    <nav>
+      <div class="parent">
+        <div class="logo">
+          <img src="<%= data.logo %>" alt="Al Ikhlas" />
+        </div>
+        <div
+          class="btn btn-green"
+          onclick="location.href='/plans/<%= data.type %>/register'"
+        >
+          Register
+        </div>
+      </div>
+    </nav>
+
+    <header>
+      <div class="landing">
+        <div class="parent">
+          <div class="left">
+            <h1><%= data.name %> Courses</h1>
+            <div class="des">
+              Learn Quran and tajweed with our expert tutors. 30+ mintes plans.
+              fixed scheduled days
+            </div>
+            <div class="btn btn-green" onclick="location.href='#pricing'">
+              See our plans
+            </div>
+          </div>
+          <div class="right">
+            <img class="quran" src="<%= data.logo %>" alt="quran" />
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- footer -->
+    <%- include('partials/footer') %>
+
+    <!-- script -->
+    <script>
+      const yearElement = document.getElementById("yearCopyright");
+
+      let date = new Date();
+
+      yearElement.innerHTML = date.getFullYear();
+
+      console.log(
+        "Console is for developers only! Do not write anything there that you do not understant to prevent being attacked by Hackers!"
+      );
+
+      // doamin
+      document.getElementById("domain").innerHTML = "alikhlas-institute.com";
+    </script>
+  </body>
+</html>
