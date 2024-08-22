@@ -1,3 +1,68 @@
 header {
   padding: var(--padding);
 }
+
+/* Courses */
+.courses {
+  background: url("/assets/clouds.svg");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 100px;
+}
+
+.courses .parent .cards {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 1400px) {
+  .courses .parent .cards {
+    grid-template-columns: repeat(3, auto); /* 3 columns for large tablets or small desktops */
+  }
+}
+
+@media (max-width: 1100px) {
+  .courses .parent .cards {
+    grid-template-columns: repeat(2, auto); /* 2 columns for tablets */
+  }
+}
+
+@media (max-width: 800px) {
+  .courses .parent .cards {
+    grid-template-columns: auto; /* 1 column for phones */
+  }
+}
+
+.courses .parent .card {
+  background: #fff;
+  box-shadow: 0 0 5px #ddd;
+  width: 325px;
+  min-height: 375px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.courses .parent .card .info {
+  font-size: 1.25rem;
+  padding: var(--padding);
+  font-weight: bold;
+}
+
+.courses .parent .card .des {
+  font-size: 0.75rem;
+  padding: 0 var(--padding) var(--padding) var(--padding);
+}
+
+.courses .parent .card .btn {
+  font-size: 0.75rem;
+  margin: 0 var(--padding) var(--padding) var(--padding);
+}
+
+.courses .parent .card img {
+  width: 100%;
+}
+/* Courses */

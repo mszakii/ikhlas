@@ -43,6 +43,29 @@
       </div>
     </header>
 
+    <section class="courses">
+      <div class="parent">
+        <% courses.forEach(function(course) { %>
+        <div class="card">
+          <div class="thumbnail">
+            <img
+              src="/assets/courses/<%= course.img %>"
+              alt="Course Thumbnail"
+            />
+          </div>
+          <div class="info"><%= course.title %></div>
+          <div class="des"><%= course.des %></div>
+          <button
+            class="btn btn-green"
+            onclick="window.open('/plans/courses/register')"
+          >
+            Subscribe 🚀
+          </button>
+        </div>
+        <% }); %>
+      </div>
+    </section>
+
     <!-- footer -->
     <%- include('partials/footer') %>
 

@@ -129,7 +129,36 @@ app.get("/courses/:type", (req, res) => {
     type: type,
     logo: `/assets/${type}_courses.png`,
   };
-  res.render("courses", { data });
+
+  if (type == "arabic") {
+    courses = [
+      {
+        img: "course1.jpg",
+        title: "Course 1",
+        des: "Description for course 1",
+      },
+      {
+        img: "course1.jpg",
+        title: "Course 1",
+        des: "Description for course 1",
+      },
+      {
+        img: "course1.jpg",
+        title: "Course 1",
+        des: "Description for course 1",
+      },
+    ];
+  } else {
+    courses = [
+      {
+        img: "course1.jpg",
+        title: "Course 1",
+        des: "Description for course 1",
+      },
+    ];
+  }
+
+  res.render("courses", { data, courses });
 });
 
 // Codes API

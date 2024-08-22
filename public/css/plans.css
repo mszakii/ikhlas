@@ -135,11 +135,11 @@ section.price {
   }
 }
 
-.parent .group {
+.price .parent .group {
   margin: 20px 0px;
 }
 
-.parent .card {
+.price .parent .card {
   width: 200px;
   height: 300px;
   border-top: 4px solid var(--plant-dark);
@@ -151,12 +151,12 @@ section.price {
   flex-direction: column;
 }
 
-.card h5 {
+.price .card h5 {
   color: var(--plant-dark);
   margin-top: 10px;
 }
 
-.card h3 {
+.price .card h3 {
   width: 110%;
   transform: translatex(-3%);
   background-color: var(--plant-dark);
@@ -167,7 +167,7 @@ section.price {
   box-shadow: 0px 0px 4px #000;
 }
 
-.card h3::before {
+.price .card h3::before {
   content: "";
   position: absolute;
   top: 100%;
@@ -183,25 +183,25 @@ section.price {
   filter: brightness(0.6);
 }
 
-.card span {
+.price .card span {
   font-size: 13px;
   opacity: 0.7;
 }
 
-.card hr {
+.price .card hr {
   margin: 10px;
 }
 
-.card .priceDiv {
+.price .card .priceDiv {
   opacity: 0.9;
   color: var(--plant-dark);
 }
 
-.card .priceDiv .s2 {
+.price .card .priceDiv .s2 {
   font-size: 13px;
 }
 
-.card .btn {
+.price .card .btn {
   width: 100%;
   text-align: center;
   border: none;
@@ -210,7 +210,7 @@ section.price {
   transition-duration: 0.3s;
 }
 
-.card .btn:hover {
+.price .card .btn:hover {
   color: #fff;
   background-color: var(--plant-dark);
 }
