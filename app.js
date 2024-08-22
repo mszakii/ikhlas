@@ -130,30 +130,103 @@ app.get("/courses/:type", (req, res) => {
     logo: `/assets/${type}_courses.png`,
   };
 
-  if (type == "arabic") {
+  if (type == "quran") {
     courses = [
       {
-        img: "course1.jpg",
-        title: "Course 1",
-        des: "Description for course 1",
+        img: "quran.jpg",
+        title: "📚 Quran for Beginners",
+        des: "Learn the Quran from scratch, mastering reading, understanding, and memorization. 🎓 Embark on a transformative journey. 🌱",
       },
       {
-        img: "course1.jpg",
-        title: "Course 1",
-        des: "Description for course 1",
+        img: "quran/noor.jpg",
+        title: "📖 Noor al Bayan / Qaida Course",
+        des: "Master the Arabic alphabet, pronunciation, and reading skills. 📚 Start your Quranic journey with confidence. 🤲",
       },
       {
-        img: "course1.jpg",
-        title: "Course 1",
-        des: "Description for course 1",
+        img: "quran/memo.jpg",
+        title: "🧠 Quran Memorization Course",
+        des: "Learn effective memorization techniques and recite the Quran with passion. 🕋 Achieve spiritual enlightenment. 💫",
+      },
+      {
+        img: "quran/reci.jpg",
+        title: "💬 Quran Recitation Course",
+        des: "Develop a fluent and expressive recitation style. Connect with the Quran on a deeper level. 📖",
+      },
+      {
+        img: "quran/tajweed.jpg",
+        title: "😎 Tajweed Course",
+        des: "Learn the intricate rules of Tajweed for beautiful Quranic recitation. 🎙️ Elevate your spiritual experience. 🙏",
       },
     ];
-  } else {
+  } else if (type == "arabic") {
     courses = [
       {
-        img: "course1.jpg",
-        title: "Course 1",
-        des: "Description for course 1",
+        img: "arabic.jpg",
+        title: "🚀 Master Arabic: A Complete Guide",
+        des: " Learn Arabic from scratch, mastering reading, writing, speaking, and understanding. 🎓 Achieve fluency and cultural understanding. 🌍",
+      },
+      {
+        img: "arabic/reading.jpg",
+        title: "📖 Arabic Reading Course",
+        des: "Master the Arabic alphabet, pronunciation, and reading skills. 📚 Unlock the world of Arabic literature. 📖",
+      },
+      {
+        img: "arabic/conv.jpg",
+        title: "💬 Arabic Conversation Course",
+        des: "Learn essential conversational phrases and practice speaking Arabic in real-life situations. 🗣️ Enhance your communication skills. 🤝",
+      },
+      {
+        img: "arabic/egyption.jpg",
+        title: "🇪🇬 Egyptian Colloquial Arabic Course",
+        des: "Master Egyptian slang and dialects. 🗣️ Connect with Egyptians on a deeper level.",
+      },
+    ];
+  } else if (type == "islamic") {
+    courses = [
+      {
+        img: "islamic.jpg",
+        title: "🚀 Start Your Islamic Journey",
+        des: "Build a strong foundation in Islam. 📚 Learn core beliefs, prayers, and how to live a good Muslim life. 🚀",
+      },
+      {
+        img: "islamic/AQIDAH.JPG",
+        title: "Aqidah Course",
+        des: "Explore the core beliefs of Islam and develop a strong Islamic worldview. 📖 Understand the attributes of Allah, prophethood, and the unseen world. 💫",
+      },
+      {
+        img: "islamic/fiqh.jpg",
+        title: "Fiqh Course",
+        des: "Understand the principles and rulings governing various aspects of Muslim life. 📚 Explore pure worship, family law, transactions, and more. ⚖️",
+      },
+      {
+        img: "islamic/Hadith.jpg",
+        title: "📜 Hadith Course",
+        des: "Learn the sayings and actions of Prophet Muhammad (peace be upon him). 📚 Study Hadith sciences, collections, and their practical applications. 📜",
+      },
+      {
+        img: "islamic/islamic histoory.jpg",
+        title: "🌍 Islamic History Course",
+        des: "Explore the rise of Islam, Islamic civilizations, and its impact on global history. 🗺️ Understand the past to shape the future. 🌍",
+      },
+      {
+        img: "islamic/seerah.jpg",
+        title: "Seerah Course",
+        des: "ﷺ Learn from the life and teachings of Prophet Muhammad (peace be upon him). 📚 Discover his character, leadership, and impact on the world. ✨",
+      },
+      {
+        img: "islamic/stories.jpg",
+        title: "Quranic and Prophets Stories",
+        des: " Discover inspiring tales of faith, courage, and perseverance. 📚 Learn about Noah, Moses, Jesus, and more. 📖",
+      },
+      {
+        img: "islamic/tafseer.jpg",
+        title: "📚 Tafseer Course",
+        des: "Explore the meaning, context, and wisdom of the Quran. 📚 Learn core principles, historical context, linguistic analysis, and practical application. 📖",
+      },
+      {
+        img: "islamic/tarbyah.jpg",
+        title: "Tarbyah Islamiyah Course",
+        des: "Learn about supplications, remembrances, and Islamic etiquette. 🤲 Enhance your connection with Allah and refine your behavior.",
       },
     ];
   }
