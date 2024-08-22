@@ -189,7 +189,7 @@ app.get("/courses/:type", (req, res) => {
         des: "Build a strong foundation in Islam. 📚 Learn core beliefs, prayers, and how to live a good Muslim life. 🚀",
       },
       {
-        img: "islamic/AQIDAH.JPG",
+        img: "islamic/AQIDAH.jpg",
         title: "Aqidah Course",
         des: "Explore the core beliefs of Islam and develop a strong Islamic worldview. 📖 Understand the attributes of Allah, prophethood, and the unseen world. 💫",
       },
